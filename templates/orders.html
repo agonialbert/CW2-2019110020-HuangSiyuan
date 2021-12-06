@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="page-add" id="page-add-order">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="page-breadcrumb">
+                    <h2>Your Order<span>.</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="cart-page">
+    <div class="container">
+        <div class="cart-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="product-h">Product</th>
+                        <th class="left-p text-center">Quantity</th>
+                        <th class="right-p text-center">Price</th>
+                        <th>Address</th>
+                        <th class="right-p text-center">Implementation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- cartitems -->
+                    {% for key in history_order %}
+                    <tr>
+                        <td class="product-col">
+                            <img src="{{ url_for('static', filename='img/products/' + history_order[key][1]) }}" alt="">
+                            <div class="p-title">
+                                <h5> {{ key }}</h5><br>
+                                <p>{{ history_order[key][5] }}</p>
+                            </div>
+                        </td>
+{#                        <td>{{  }}</td>#}
+                        <td class="left-p text-center"> {{ history_order[key][2] }} </td>
+{#                        <td>#}
+{#                            <p type="text" value="{{ history_order[key][2] }}" name="update_num"></p>#}
+{#                        </td>#}
+                        <td class="right-p text-center"> {{ history_order[key][0] }} </td>
+                        <td>
+                            {{ history_order[key][3] }}<br>
+                            {{ history_order[key][4] }}<br>
+                            {{ history_order[key][8] }}<br>
+                            {{ history_order[key][7] }}<br>
+                            {{ history_order[key][6] }}<br>
+                        </td>
+                        <td class="product-close">
+                            { %if history_order[key][9] == 1% }
+                            <p>Tran </p>
+                            {% elif  %}
+                            <form action="{{ url_for('confirmation', product_title = history_order[key][10]) }}" method="POST">
+                                <input class="site-btn clear-btn" type="submit" valule="Confirmation of receipt">
+                            </form>
+                            <form action="{{ url_for('return_item', product_title = history_order[key][10]) }}" method="POST">
+                                <input class="site-btn clear-btn" type="submit" value="Request a return">
+                            </form>
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

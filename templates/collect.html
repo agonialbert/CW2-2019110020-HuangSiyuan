@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="page-add" id="page-add-order">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="page-breadcrumb">
+                    <h2>Collect<span>.</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="cart-page">
+    <div class="container">
+        <div class="cart-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="product-h">Product</th>
+                        <th class="left-p text-center">Price</th>
+                        <th class="right-p text-center">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- cartitems -->
+                    {% for product in products %}
+                    <tr>
+                        <td class="product-col">
+                            <img src="{{ url_for('static', filename='img/products/' + product.image_file) }}" alt="">
+                            <div class="p-title">
+                                <h5> {{ product.title }}</h5><br>
+                            </div>
+                        </td>
+{#                        <td>{{  }}</td>#}
+                        <td class="left-p text-center"> {{ product.price }} </td>
+{#                        <td>#}
+{#                            <p type="text" value="{{ history_order[key][2] }}" name="update_num"></p>#}
+{#                        </td>#}
+                        <td class="right-p text-center"> {{ product.description }} </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

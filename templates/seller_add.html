@@ -1,0 +1,135 @@
+{% extends "seller_basic.html" %}
+{% block link %}
+{% endblock %}
+{% block content %}
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Product Add</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ url_for('seller_home') }}"
+                                                           aria-label="move to the index page">Home</a></li>
+                            <li class="breadcrumb-item active">Product Add</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <section class="col-lg-12 connectedSortable">
+                    <div class="card tab-content">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                    <i class="ion ion-clipboard mr-1"></i>
+                                    Add
+                            </h3>
+                        </div>
+                            <div class="card-body ">
+                                <form action="" class="checkout-form" method="post" name="edit" enctype="multipart/form-data">
+                                    {{ form.hidden_tag() }}
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <p>Title:</p>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            {% if form.title.errors %}
+                                            {{ form.title(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.title.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                            {% else %}
+                                {#            <input type="datetime-local" name="datetime"class="">#}
+                                                {{ form.title(cols='20',class_="form-control form-control-lg") }}<br>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <p>Price:</p>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            {% if form.price.errors %}
+                                            {{ form.price(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.price.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                            {% else %}
+                                {#            <input type="datetime-local" name="datetime"class="">#}
+                                                {{ form.price(cols='20',class_="form-control form-control-lg") }}<br>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <p>Description:</p>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            {% if form.description.errors %}
+                                            {{ form.description(class="form-control form-control-lg is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.description.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                            {% else %}
+                                {#            <input type="datetime-local" name="datetime"class="">#}
+                                                {{ form.description(cols='120',class_="form-control form-control-lg") }}<br>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <p class="in-name">Category</p>
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <select class="cart-select " name = "type_select">
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <option>Children</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-2">
+                                            <p>Image upload:</p>
+                                        </div>
+                                        <div class="col-lg-10">
+                                        {% if form.photo.errors %}
+                                         {{ form.photo (class="is-invalid")}}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.photo.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                             {{ form.photo }}
+                                         {% endif %}<br><br>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                    {{ form.submit(class="btn btn-default") }}
+                                    </div>
+{#                                <p><input type="submit" class="btn btn-default" value="Save"></p>#}
+                                </form>
+                            </div>
+
+                    </div>
+                </section>
+{#        <!-- Main row -->#}
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

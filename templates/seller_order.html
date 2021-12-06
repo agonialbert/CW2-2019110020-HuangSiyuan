@@ -1,0 +1,114 @@
+{% extends "seller_basic.html" %}
+{% block link %}
+{% endblock %}
+
+{% block content %}
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="{{ url_for('seller_home') }}"
+                                                           aria-label="move to the index page">Home</a></li>
+                            <li class="breadcrumb-item active">Product</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+{#        <!-- Main row -->#}
+                <table id="example" class="display" >
+                    <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Information</th>
+                        <th>Handle</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td class="product-col">
+                                <img src="{{ url_for('static', filename='img/products/' + product.image_file) }}" width="200px" height="200px" alt="">
+                            </td>
+                            <td>
+                                <h5>{{ product.title }}</h5><br>
+                                {{ product.price }}
+                            </td>
+                            <td>
+                                <div class="row">
+{#                                    <a href="javascript:;" onclick="deleteProduct(${{ product.id }});"  class="ml-5" aria-label="delete"><i class="fa fa-trash-o" style="font-size: 30px"> </i></a>#}
+                                    <a data-url='{{ url_for('seller_delete', id=product.id) }}' href="javascript:;"  class="btn btn-danger ml-2" aria-label="delete"><i class="fa fa-trash-o" style="font-size: 20px"> </i></a>
+                                    <a href="/seller_edit/{{ product.id }}" class="btn btn-success ml-3" aria-label="edit"><i class="fa fa-pencil-square-o" style="font-size: 20px"></i></a>
+                                </div>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block extrajs %}
+<script>
+
+$(document).ready(function() {
+  $('#example').dataTable();
+} );
+
+
+{#function deleteProduct(id) {#}
+{#    var data = {#}
+{#        "product_id": id#}
+{#    };#}
+{#    var req_json = JSON.stringify(data);#}
+{#    alert(req_json)#}
+    {#$.post("/seller_delete")#}
+{#    $.ajax({#}
+{#        url: "/seller_delete",#}
+{#        type: "post",#}
+{#        data: {"product_id": id},#}
+{#        contentType: "application/json",#}
+{#        dataType:"json",#}
+{#        success: function (resp){#}
+{#            if (resp.code == 0){#}
+{#                location.href="/seller_home";#}
+{#            }#}
+{#        }#}
+{#    })#}
+//}
+     {#$(function(){#}
+     {#    $('.btn-danger').on('click', function(){#}
+     {#        var _this = $(this);#}
+     {#        var url = _this.attr('data-url');#}
+     {#        // 确认是否删除#}
+     {#        if(confirm('Confirmation of deletion?？')){#}
+     {#            // ajax调用#}
+     {#            $.post(url, function(res){#}
+     {#                //处理结果#}
+     {#                if(res.code == 0){#}
+     {#                    _this.parents('tr').hide()#}
+                         {#location.href="/seller_home";#}
+     {#                }else{#}
+     {#                    alert('Failed to delete')#}
+     {#                }#}
+     {#            })#}
+     {#        }#}
+     {##}
+     {#    })#}
+     {#})#}
+$("#example").DataTable({
+    "paging": false, // 禁止分页
+});
+</script>
+{% endblock %}
+
