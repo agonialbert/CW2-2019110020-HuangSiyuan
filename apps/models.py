@@ -82,6 +82,7 @@ class Cart(db.Model):
     quantity = db.Column(db.Integer, nullable=False)
     item_total_price = db.Column(db.Integer, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
 
     def __repr__(self):
         return f"Cart('{self.title}','{self.price}','{self.image_file}')"
@@ -103,7 +104,7 @@ class CartItem(db.Model):
     status = db.Column(db.Integer, nullable=False, default=2)
     infor_id = db.Column(db.Integer, db.ForeignKey('infor.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
+    seller_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
         return f"CartItem('{self.quantity}')"

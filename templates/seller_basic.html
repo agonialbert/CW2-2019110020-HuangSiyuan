@@ -73,45 +73,22 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                       <!-- Add icons to the links using the .nav-icon class
                            with font-awesome or any other icon font library -->
-                    <li class="nav-item menu-open">
-                        <a href="{{ url_for('seller_home') }}" class="nav-link" aria-label="menu-open">
-                            <i class="nav-icon fa fa-list"></i>
-                            <p>
-
-                                <i class="right fa fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link " href="{{ url_for('seller_add') }}" data-toggle="tab" aria-label="all todo items">
-                                    <i class="nav-icon fa fa-circle text-info"></i>
-                                    <p>Add new item</p>
-                                <small class="badge badge-success"></small>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " href="{{ url_for('seller_add') }}" data-toggle="tab" aria-label="all todo items">
-                                    <i class="nav-icon fa fa-circle text-info"></i>
-                                    <p>Oder record</p>
-                                <small class="badge badge-success"></small>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " href="{{ url_for('seller_add') }}" data-toggle="tab" aria-label="all todo items">
-                                    <i class="nav-icon fa fa-circle text-info"></i>
-                                    <p>Returned product</p>
-                                <small class="badge badge-success"></small>
-                                </a>
-                            </li>
-
-                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a  class="nav-link" href="{{ url_for('seller_home') }}"   aria-label="the details of all todo tasks">
+                        <a  class="nav-link" href="{{ url_for('seller_add') }}"   aria-label="the details of all todo tasks">
                             <i class="nav-icon fa fa-circle text-light"></i>
-                            <p>The detail of all tasks</p>
+                            <p>Add new item</p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a  class="nav-link" href="{{ url_for('seller_order') }}"   aria-label="the details of all todo tasks">
+                            <i class="nav-icon fa fa-circle text-light"></i>
+                            <p>Order record</p>
+                        </a>
+                    </li>
+                    </li>
+
                 </ul>
 
             </nav>

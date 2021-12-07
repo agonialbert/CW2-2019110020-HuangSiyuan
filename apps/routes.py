@@ -122,14 +122,14 @@ def product(product_id):
     if request.method == 'POST':
         if current_user.is_authenticated:
             quantity = int(request.form.get('quantity'))
-            product_incart = Cart.query.filter_by(title=product.title, user_id=current_user.id).first()
+            product_incart = Cart.query.filter_by(product_id=product.id, user_id=current_user.id).first()
             if product_incart:
                 product_incart.quantity += quantity
                 product_incart.item_total_price = product.price * product_incart.quantity
                 db.session.commit()
             else:
                 t = Cart(title=product.title, price=product.price, image_file=product.image_file, quantity=quantity,
-                         item_total_price=product.price * quantity, user_id=current_user.id)
+                         item_total_price=product.price * quantity, user_id=current_user.id, product_id=product.id)
                 db.session.add(t)
                 db.session.commit()
             session['quantity'] = 0
@@ -253,8 +253,10 @@ def checkout():
             items = []
             for i in cart_items:
                 # 1: done 2: on the way(return, receive) 3: agree/returning a product 4: reject(apply again )
-                product = Product.query.filter_by(title=i.title).first()
-                c1 = CartItem(product_id=product.id, quantity=i.quantity, infor_id=infor.id, user_id=current_user.id)
+                product = Product.query.filter_by(id=i.product_id).first()
+
+                c1 = CartItem(product_id=product.id, quantity=i.quantity, infor_id=infor.id, user_id=current_user.id,
+                              seller_id=product.seller_id)
                 items.append(c1)
             db.session.add_all(items)
             # db.session.add(c1)
@@ -275,8 +277,8 @@ def checkout():
 @app.route('/order', methods=['POST', 'GET'])
 def order():
     history_order = {}
-    order_items = CartItem.query.filter_by(user_id=current_user.id).all()
     if current_user.is_authenticated:
+        order_items = CartItem.query.filter_by(user_id=current_user.id).all()
         for i in order_items:
             # print(i.product_id.name)
             print('*******************')
@@ -293,7 +295,7 @@ def order():
             history_order[product.title].append(infor.city)
             history_order[product.title].append(infor.country)
             history_order[product.title].append(i.status)
-            history_order[product.title].append(product.id)
+            history_order[product.title].append(i.id)
         print(history_order)
         return render_template('orders.html', history_order=history_order)
     else:
@@ -301,9 +303,9 @@ def order():
         return redirect(url_for('login'))
 
 
-@app.route('/cart/remove/<string:product_title>', methods=['POST'])
-def remove_from_cart(product_title):
-    cart_item = Cart.query.filter_by(title=product_title).first()
+@app.route('/cart/remove/<int:product_id>', methods=['POST'])
+def remove_from_cart(product_id):
+    cart_item = Cart.query.filter_by(id=product_id).first()
     if cart_item:
         db.session.delete(cart_item)
         db.session.commit()
@@ -431,6 +433,7 @@ def seller_edit(id):
 @app.route('/seller_add', methods=['GET', 'POST'])
 def seller_add():
     form = ProductForm()
+    print(111111111111111111)
     if form.validate_on_submit():
         t = Product()
         t.title = form.title.data
@@ -447,37 +450,72 @@ def seller_add():
         db.session.add(t)
         # gender = gender
         db.session.commit()
-        return redirect('/seller_home')
     return render_template('seller_add.html', product=product, form=form)
 
 
-@app.route('/confirmation/<int:product_id>', methods=['GET', 'POST'])
-def confirmation(product_id):
-    cart_item = CartItem.query.filter_by(product_id=product_id).all()
+@app.route('/confirmation/<int:id>', methods=['GET', 'POST'])
+def confirmation(id):
+    cart_item = CartItem.query.get(id)
     cart_item.status = 1
+    db.session.commit()
     return redirect('/order')
 
 
 # 1: done 2: on the way(return, receive) 3:waiting 4. agree/returning a product 4: reject(apply again )
-@app.route('/return_item/<int:product_id>', methods=['GET', 'POST'])
-def return_item(product_id):
-    cart_item = CartItem.query.filter_by(product_id=product_id).all()
-    cart_item.status = 3
+@app.route('/return_item/<int:id>', methods=['GET', 'POST'])
+def return_item(id):
+    cart_item = CartItem.query.get(id)
+    cart_item.status = 5
+    db.session.commit()
     return redirect('/order')
 
 
-@app.route('/agree/<int:product_id>', methods=['GET', 'POST'])
-def agree(product_id):
-    cart_item = CartItem.query.filter_by(product_id=product_id).all()
+@app.route('/seller_order', methods=['GET', 'POST'])
+def seller_order():
+    product_items = {}
+    if current_user.is_authenticated:
+        print('111111111111111111111')
+        cart_items = CartItem.query.filter_by(seller_id=current_user.id)
+        for i in cart_items:
+            product = Product.query.filter_by(id=i.product_id).first()
+            infor = Infor.query.filter_by(id=i.infor_id).first()
+            product_items[product.title] = []
+            product_items[product.title].append(product.price)
+            product_items[product.title].append(product.image_file)
+            product_items[product.title].append(i.quantity)
+            product_items[product.title].append(infor.name)
+            product_items[product.title].append(infor.phone)
+            product_items[product.title].append(infor.country)
+            product_items[product.title].append(infor.address)
+            product_items[product.title].append(i.id)
+            # product_items[product.title].append(infor.cartitems.id)
+            product_items[product.title].append(i.status)
+        print(product_items)
+        return render_template('seller_order.html', product_items=product_items)
+    else:
+        flash('Please log in to access this page.')
+        return redirect(url_for('login'))
+
+
+@app.route('/agree/<int:id>', methods=['GET', 'POST'])
+def agree(id):
+    print('2222222222222')
+    cart_item = CartItem.query.get(id)
+    print(cart_item)
+    cart_item.status = 3
+    db.session.commit()
+    return redirect('/seller_order')
+
+
+@app.route('/reject/<int:id>', methods=['GET', 'POST'])
+def reject(id):
+    cart_item = CartItem.query.get(id)
     cart_item.status = 4
-    return redirect('/seller_return')
+    db.session.commit()
+    return redirect('/seller_order')
 
 
-@app.route('/reject/<int:product_id>', methods=['GET', 'POST'])
-def reject(product_id):
-    cart_item = CartItem.query.filter_by(product_id=product_id).all()
-    cart_item.status = 5
-    return redirect('/seller_return')
+
 
 
 

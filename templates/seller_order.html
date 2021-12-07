@@ -13,7 +13,7 @@
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ url_for('seller_home') }}"
                                                            aria-label="move to the index page">Home</a></li>
-                            <li class="breadcrumb-item active">Product</li>
+                            <li class="breadcrumb-item active">Product Order</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -26,26 +26,45 @@
                     <thead>
                     <tr>
                         <th>Product</th>
-                        <th>Information</th>
+                        <th>Product Information</th>
+                        <th>Costumer Information</th>
                         <th>Handle</th>
                     </tr>
                     </thead>
 
                     <tbody>
-                    {% for product in products %}
+                    {% for key in product_items %}
                         <tr>
                             <td class="product-col">
-                                <img src="{{ url_for('static', filename='img/products/' + product.image_file) }}" width="200px" height="200px" alt="">
+                                <img src="{{ url_for('static', filename='img/products/' + product_items[key][1]) }}" width="200px" height="200px" alt="">
                             </td>
                             <td>
-                                <h5>{{ product.title }}</h5><br>
-                                {{ product.price }}
+                                <h5>{{ key }}</h5><br>
+                                {{ product_items[key][0] }}<br>
+                                <p>Quantity:</p>{{ product_items[key][2] }}
                             </td>
                             <td>
+                                {{ product_items[key][3] }}<br>
+                                {{ product_items[key][4] }}<br>
+                                {{ product_items[key][5] }}<br>
+                                {{ product_items[key][6] }}
+                            </td>
+                            <td>
+                                # 1: done 2: on the way(return, receive) 3: agree/returning a product 4: reject(apply again ) 5: applying
                                 <div class="row">
+                                    {% if product_items[key][8] == 1 %}
+                                        <p>Transaction successful</p>
+                                    {% elif (product_items[key][8] == 2) %}
+                                        <p>On the Way</p>
+                                    {% elif (product_items[key][8] == 3) %}
+                                        <p>Agree</p>
+                                    {% elif (product_items[key][8] == 4) %}
+                                        <p>Reject</p>
+                                    {% elif (product_items[key][8] == 5) %}
 {#                                    <a href="javascript:;" onclick="deleteProduct(${{ product.id }});"  class="ml-5" aria-label="delete"><i class="fa fa-trash-o" style="font-size: 30px"> </i></a>#}
-                                    <a data-url='{{ url_for('seller_delete', id=product.id) }}' href="javascript:;"  class="btn btn-danger ml-2" aria-label="delete"><i class="fa fa-trash-o" style="font-size: 20px"> </i></a>
-                                    <a href="/seller_edit/{{ product.id }}" class="btn btn-success ml-3" aria-label="edit"><i class="fa fa-pencil-square-o" style="font-size: 20px"></i></a>
+                                        <a href="/agree/{{ product_items[key][7] }}" class="btn btn-success ml-3" >Agree</a>
+                                        <a href="/reject/{{ product_items[key][7] }}"  class="btn btn-success ml-3" >Reject</a>
+                                    {% endif %}
                                 </div>
                             </td>
 
@@ -105,7 +124,7 @@ $(document).ready(function() {
      {#        }#}
      {##}
      {#    })#}
-     {#})#}
+     //{#})#}
 $("#example").DataTable({
     "paging": false, // 禁止分页
 });

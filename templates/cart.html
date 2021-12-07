@@ -50,7 +50,7 @@
                         </form>
                         <td class="total">{{ cart_item.item_total_price }}</td>
                         <td class="product-close">
-                            <form action="{{ url_for('remove_from_cart', product_title = cart_item.title) }}" method="POST">
+                            <form action="{{ url_for('remove_from_cart', product_id = cart_item.product_id) }}" method="POST">
                                 <input class="site-btn clear-btn" type="submit" value="Delete">
                             </form>
                             <input class="site-btn clear-btn" type="submit" value="Update" form="update">
@@ -137,3 +137,25 @@
 </div>
 <!-- Cart Page Section End -->
 {% endblock content %}
+
+
+
+
+
+
+
+
+
+18	Nike SB Zoom Blazer Mid PRM	90	Inspired by Barcelona's community art spaces, the Nike SB Zoom Blazer Mid PRM men's/women's skate shoe features a patchwork of tumbled leather, leather and canvas.
+19	Nike ZoomX Vaporfly Next% 2	200	Competition running shoes can take your performance to the next level, helping you chase new goals and set new records
+20	Nike AF1 Shadow	90	The Nike AF1 Shadow women's sneaker adds a fun twist to a classic basketball shoe design, highlighting playful style
+21	Air Jordan 4 Retro	225	The Air Jordan 4 Retro men's sneaker is inspired by the classic colourway of the 1985 Air Jordan 1 first year model
+22	Nike Flex Advance BP	50	Designed with Nike FlyEase technology, the wider opening makes it easy for little ones to slip into the shoe
+23	Nike AF1/1 (GS)	60	This legendary shoe is inspired by mix tapes from the past and present, from vintage song sheets to athlete video highlights
+24	Jordan 4 Retro (PS)	30	The Jordan 4 Retro (PS) is inspired by the first year of the AJ4
+25	Air Jordan 1 Mid SE (GS)	70	With fun colourways and durable fabric overlays, webbing pulls and faux climbing rope laces, the shoe is inspired by outdoor gear
+26	Nike Therma-FIT ADV ACG“Lunar Lake”	130	Filled with recycled polyester, this warm jacket provides excellent coverage for the head and body
+27	Nike Sportswear Storm-FIT Windrunner	100	Reflective grid print highlighting the classic V-shape design
+28	Nike Sportswear Swoosh	80	The jacket is reversible and combines a high-fluff Sherpa fleece fabric
+29	Nike ESC	375	The Nike ESC Women's Jacket is made from a durable woven fabric to keep you comfortable and stylish in all weather conditions
+30	Nike Sportswear Swoosh	60	The extra loose fit creates a casual and comfortable feel that defies the weather

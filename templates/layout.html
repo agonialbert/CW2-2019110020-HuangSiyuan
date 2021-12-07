@@ -31,26 +31,10 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
-    
-    <!-- Search model -->
-{#	<div class="search-model">#}
-{#		<div class="h-100 d-flex align-items-center justify-content-center">#}
-{#			<div class="search-close-switch">+</div>#}
-{#			<form class="search-model-form", method = "POST", action="{{ url_for('search') }}">#}
-{#                <input type="text" id="search-input" placeholder="Search here....." name = "query">#}
-{#                <input type="submit" #}
-{#                style="display:none" />#}
-{#			</form>#}
-{#		</div>#}
-{#	</div>#}
-	<!-- Search model end -->
-
-    <!-- Header Section Begin -->
-
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="logo navbar-brand col-lg-3">
         <a href="{{ url_for('home') }}">
-            <img src="{{ url_for('static', filename='img/ico.PNG') }}" alt="">
+            <img src="{{ url_for('static', filename='img/ico.gif') }}" alt="">
         </a>
     </div>
 
@@ -66,16 +50,10 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ url_for('category', category_name = 'All') }}">Shop</a>
             <ul class="sub-menu">
-                <li><a href="{{ url_for('category', category_name = 'Men') }}">Men</a></li>
-                <li><a href="{{ url_for('category', category_name = 'Women') }}">Women</a></li>
-                <li><a href="{{ url_for('category', category_name = 'Fragrance') }}">Children</a></li>
+                <li><a href="{{ url_for('category', category_name = 'Male') }}">Men</a></li>
+                <li><a href="{{ url_for('category', category_name = 'Female') }}">Women</a></li>
+                <li><a href="{{ url_for('category', category_name = 'Children') }}">Children</a></li>
             </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="{{ url_for('about') }}">About</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link disabled" href="{{ url_for('contact') }}">Contact</a>
         </li>
     </ul>
 
@@ -144,32 +122,25 @@
                             <div class="cw-item">
                                 <h5>Location</h5>
                                 <ul>
-                                    <li>Quoc Huong, </li>
-                                    <li>Thao Dien, Ho Chi Minh city</li>
+                                    <li>Sichuan, Chengdu </li>
+                                    <li>Southwest Jiaotong University</li>
                                 </ul>
                             </div>
                             <div class="cw-item">
                                 <h5>Phone</h5>
                                 <ul>
-                                    <li>+1 (603)535-4592</li>
-                                    <!-- <li>+1 (603)535-4556</li> -->
+                                    <li>+86 15063252660</li>
                                 </ul>
                             </div>
                             <div class="cw-item">
                                 <h5>E-mail</h5>
                                 <ul>
-                                    <li>caongochoangvan1999@gmail.com</li>
-                                    <!-- <li>www.violetstore.com</li> -->
+                                    <li>2292751150@qq.com</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="map col-lg-7">
-{#                         <iframe width="500" height="250" frameborder="0" src="https://cn.bing.com/maps/embed?h=250&w=500&cp=30.7703~103.98179999999999&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">#}
-{#                         </iframe>#}
-{#                         <div style="white-space: nowrap; text-align: center; width: 400px; padding: 6px 0;">#}
-{#                            <a id="largeMapLink" target="_blank" href="https://cn.bing.com/maps?cp=30.7703~103.98179999999999&amp;sty=r&amp;lvl=11&amp;FORM=MBEDLD">查看放大的地图</a> &nbsp; | &nbsp;#}
-{#                        </div>#}
                         <div class="justify-content-center align-items-center"id="myMap"></div>
 
                     </div>
@@ -180,11 +151,7 @@
 			<div class="container">
 				<div class="social-links text-center">
 					<a href="https://weibo.com/" class="weibo"><i class="fa fa-weibo"></i><span>instagram</span></a>
-					<!-- <a href="" class="pinterest"><i class="fa fa-pinterest"></i><span>pinterest</span></a> -->
 					<a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
-					<!-- <a href="" class="twitter"><i class="fa fa-twitter"></i><span>twitter</span></a> -->
-					<!-- <a href="" class="youtube"><i class="fa fa-youtube"></i><span>youtube</span></a> -->
-					<!-- <a href="" class="tumblr"><i class="fa fa-tumblr-square"></i><span>tumblr</span></a> -->
 				</div>
 			</div>
 
@@ -192,8 +159,6 @@
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</p>
             </div>
-
-
 		</div>
     </footer>
     <!-- Footer Section End -->
