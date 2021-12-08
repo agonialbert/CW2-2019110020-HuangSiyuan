@@ -66,7 +66,7 @@
                             <form action="{{ url_for('return_item', product_id = history_order[key][10]) }}" method="POST">
                                 <input class="site-btn clear-btn" type="submit" value="Request again">
                             </form>
-                            {% elif (history_order[key][9] == 4) %}
+                            {% elif (history_order[key][9] == 5) %}
                              <p>Applying</p>
                             {% endif %}
 

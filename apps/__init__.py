@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask
 from flask.logging import default_handler
 from flask_migrate import Migrate, MigrateCommand
 from flask_sqlalchemy import SQLAlchemy
@@ -6,7 +6,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from datetime import timedelta
 
-from flask_wtf import CSRFProtect
+
 from werkzeug.datastructures import ImmutableDict
 from flask_script import Manager
 import os

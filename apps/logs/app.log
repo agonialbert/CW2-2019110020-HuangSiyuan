@@ -473,3 +473,90 @@ TypeError: storage must be a werkzeug.FileStorage
 2021-12-08 12:24:43 INFO routes.py home[line:15] Enter the home page
 2021-12-08 12:24:50 INFO routes.py home[line:15] Enter the home page
 2021-12-08 12:24:59 INFO routes.py home[line:15] Enter the home page
+2021-12-08 14:43:41 INFO routes.py home[line:15] Enter the home page
+2021-12-08 14:43:41 INFO routes.py home[line:15] Enter the home page
+2021-12-08 14:43:52 INFO routes.py home[line:15] Enter the home page
+2021-12-08 14:44:05 INFO routes.py login[line:64] Costumer login
+2021-12-08 14:44:05 INFO routes.py home[line:15] Enter the home page
+2021-12-08 15:18:25 INFO routes.py home[line:15] Enter the home page
+2021-12-08 15:18:25 INFO routes.py home[line:15] Enter the home page
+2021-12-08 15:19:04 INFO routes.py category[line:106] category items
+2021-12-08 15:19:14 INFO routes.py category[line:106] category items
+2021-12-08 15:23:38 INFO routes.py home[line:15] Enter the home page
+2021-12-08 15:29:48 INFO routes.py category[line:106] category items
+2021-12-08 15:30:18 INFO routes.py category[line:106] category items
+2021-12-08 15:30:24 INFO routes.py category[line:106] category items
+2021-12-08 15:30:31 INFO routes.py category[line:106] category items
+2021-12-08 15:30:34 INFO routes.py category[line:106] category items
+2021-12-08 15:30:39 INFO routes.py product[line:123] Successfully query
+2021-12-08 15:30:39 INFO routes.py product[line:128] Successfully query
+2021-12-08 15:31:36 INFO routes.py product[line:123] Successfully query
+2021-12-08 15:31:36 INFO routes.py product[line:128] Successfully query
+2021-12-08 15:34:23 INFO routes.py product[line:123] Successfully query
+2021-12-08 15:34:23 INFO routes.py product[line:128] Successfully query
+2021-12-08 15:34:42 INFO routes.py product[line:123] Successfully query
+2021-12-08 15:34:42 INFO routes.py product[line:128] Successfully query
+2021-12-08 15:34:48 INFO routes.py category[line:106] category items
+2021-12-08 15:34:49 INFO routes.py category[line:106] category items
+2021-12-08 15:34:49 INFO routes.py home[line:15] Enter the home page
+2021-12-08 15:34:49 INFO routes.py category[line:106] category items
+2021-12-08 15:35:28 INFO routes.py home[line:15] Enter the home page
+2021-12-08 15:35:33 INFO routes.py home[line:15] Enter the home page
+2021-12-08 15:35:43 INFO routes.py login[line:64] Costumer login
+2021-12-08 15:35:43 INFO routes.py home[line:15] Enter the home page
+2021-12-08 16:38:51 INFO routes.py category[line:106] category items
+2021-12-08 16:38:56 INFO routes.py product[line:123] Successfully query
+2021-12-08 16:38:56 INFO routes.py product[line:128] Successfully query
+2021-12-08 16:47:04 INFO routes.py product[line:123] Successfully query
+2021-12-08 16:47:04 INFO routes.py product[line:128] Successfully query
+2021-12-08 16:47:18 INFO routes.py category[line:106] category items
+2021-12-08 16:47:25 INFO routes.py category[line:106] category items
+2021-12-08 16:47:31 INFO routes.py product[line:123] Successfully query
+2021-12-08 16:47:31 INFO routes.py product[line:128] Successfully query
+2021-12-08 16:54:37 INFO routes.py category[line:106] category items
+2021-12-08 16:54:42 INFO routes.py product[line:123] Successfully query
+2021-12-08 16:54:42 INFO routes.py product[line:128] Successfully query
+2021-12-08 18:26:50 INFO routes.py home[line:15] Enter the home page
+2021-12-08 18:26:54 INFO routes.py category[line:106] category items
+2021-12-08 18:26:59 INFO routes.py category[line:106] category items
+2021-12-08 18:27:07 INFO routes.py category[line:106] category items
+2021-12-08 18:27:10 INFO routes.py product[line:123] Successfully query
+2021-12-08 18:27:10 INFO routes.py product[line:128] Successfully query
+2021-12-08 18:29:50 INFO routes.py login[line:64] Costumer login
+2021-12-08 18:29:50 INFO routes.py home[line:15] Enter the home page
+2021-12-08 18:29:54 INFO routes.py category[line:106] category items
+2021-12-08 18:30:00 INFO routes.py category[line:106] category items
+2021-12-08 18:30:03 INFO routes.py category[line:106] category items
+2021-12-08 18:30:05 INFO routes.py product[line:123] Successfully query
+2021-12-08 18:30:05 INFO routes.py product[line:128] Successfully query
+2021-12-08 18:30:12 INFO routes.py new_comment[line:215] Successfully added new comment to comment table
+2021-12-08 18:30:12 INFO routes.py product[line:123] Successfully query
+2021-12-08 18:30:12 INFO routes.py product[line:128] Successfully query
+2021-12-08 18:31:57 INFO routes.py product[line:123] Successfully query
+2021-12-08 18:31:57 INFO routes.py product[line:128] Successfully query
+2021-12-08 18:31:57 INFO routes.py product[line:133] Costumer add products
+2021-12-08 18:31:57 INFO routes.py product[line:143] Successfully added items to cart table
+2021-12-08 18:31:57 INFO routes.py product[line:150] Adding to shopping cart successfully
+2021-12-08 18:36:57 INFO routes.py checkout[line:267] Successfully added information to info table
+2021-12-08 18:36:57 INFO routes.py checkout[line:278] Successfully added product to cart_item table
+2021-12-08 18:36:57 INFO routes.py checkout[line:285] Successfully delete product from cart table
+2021-12-08 18:36:57 INFO routes.py home[line:15] Enter the home page
+2021-12-08 18:42:40 INFO routes.py logout[line:374] logout
+2021-12-08 18:42:40 INFO routes.py home[line:15] Enter the home page
+2021-12-08 18:42:51 INFO routes.py login[line:61] Seller login
+2021-12-08 18:52:43 INFO routes.py login[line:64] Costumer login
+2021-12-08 18:52:43 INFO routes.py home[line:15] Enter the home page
+2021-12-08 19:08:51 INFO routes.py logout[line:374] logout
+2021-12-08 19:08:51 INFO routes.py home[line:15] Enter the home page
+2021-12-08 19:08:59 INFO routes.py login[line:61] Seller login
+2021-12-08 19:10:21 INFO routes.py reject[line:544] Refusal to return a product to a user
+2021-12-08 20:28:11 INFO routes.py home[line:15] Enter the home page
+2021-12-08 23:06:19 INFO routes.py home[line:15] Enter the home page
+2021-12-08 23:32:32 INFO routes.py home[line:15] Enter the home page
+2021-12-08 23:33:20 INFO routes.py home[line:15] Enter the home page
+2021-12-08 23:34:51 INFO routes.py category[line:111] category items
+2021-12-08 23:35:03 INFO routes.py category[line:111] category items
+2021-12-08 23:35:09 INFO routes.py category[line:111] category items
+2021-12-08 23:35:12 INFO routes.py product[line:128] Successfully query Nike Sportswear Swoosh
+2021-12-08 23:35:12 INFO routes.py product[line:133] Successfully query
+2021-12-08 23:35:28 INFO routes.py login[line:66] 321 login

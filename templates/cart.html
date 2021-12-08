@@ -41,7 +41,9 @@
                         <form id="update" method="POST" action="{{ url_for('update_cart', product_id = cart_item.product_id) }}">
                         <td class="quantity-col">
                             <div class="pro-qty">
-                                <input  type="text" value="{{ cart_item.quantity }}" name="update_num">
+                                <label>
+                                    <input  type="text" value="{{ cart_item.quantity }}" name="update_num">
+                                </label>
                             </div>
                         </td>
                         </form>
@@ -64,7 +66,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="coupon-input">
-                        <input type="text" placeholder="Enter cupone code">
+                        <label>
+                            <input type="text" placeholder="Enter cupone code">
+                        </label>
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1 text-left text-lg-right">

@@ -1,10 +1,10 @@
-import sqlite3
-import unittest
-from apps import app,db,bcrypt
-from apps.models import *
-from flask import url_for
 
-import os.path
+import unittest
+from apps import app,bcrypt
+from apps.models import *
+
+
+
 
 class ApiTestCase(unittest.TestCase):
     def setUp(self):

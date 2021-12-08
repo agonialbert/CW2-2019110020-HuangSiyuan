@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="page-breadcrumb">
-                        <h2>Categories<span>.</span></h2>
+                        <h2>Product<span>.</span></h2>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,9 @@
                         <form method="POST" action="">
                         <div class="product-quantity">
                             <div class="pro-qty">
-                                <input type="text" value="1" name = "quantity">
+                                <label>
+                                    <input type="text" value="1" name = "quantity">
+                                </label>
                             </div>
                         </div>
                         <input type="submit" class="primary-btn pc-btn" value="Add to cart">
@@ -92,8 +94,10 @@
                 
                 <div class="col-lg-11">
                     <form class="contact-form" id="comment_form" action="{{ url_for('new_comment', product_id = product.id) }}">
-                        
+
+                        <label>
                             <input type="text" placeholder="Type your text ..." name="content">
+                        </label>
                     </form>
                     {% if content_error %}
                         <span class="is-invalid"> {{ content_error }} </span>
@@ -153,10 +157,9 @@
 
                 </div>
                 {% endif %}
-            </div>
+        </div>
 
            
-        </div>
     </section>
     <!-- Related Product Section Begin -->
     <section class="related-product spad">

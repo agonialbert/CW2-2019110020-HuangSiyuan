@@ -21,6 +21,7 @@ def home():
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
+    global user_type
     app.logger.info("User try to sign up")
     if current_user.is_authenticated:
         redirect(url_for('home'))
@@ -37,7 +38,11 @@ def register():
             user_type = 3
         # type_gender = request.form.get("gender")
         # print(type_gender)
-        users = User(username=usernames, email=emails, password=passwords, user_type=user_type)
+        users = User()
+        users.username = usernames
+        users.email = emails
+        users.password = passwords
+        users.user_type = user_type
         db.session.add(users)
         db.session.commit()
         app.logger.info("Registration successful")
@@ -58,13 +63,13 @@ def login():
             session['email'] = form.email.data
             flash(f'Login successfully!', 'success')
             if user.user_type == 1 or user.user_type == 2:
-                app.logger.info("Seller login")
+                app.logger.info("%s login", current_user.username)
                 return redirect(url_for('seller_home'))
             else:
-                app.logger.info("Costumer login")
+                app.logger.info("%s login", current_user.username)
                 return redirect(url_for('home'))
         else:
-            app.logger.warning("login failed")
+            app.logger.warning("%s login failed", current_user.username)
             flash(f'Please check the information!', 'danger')
         return render_template('login.html', form=form, title='Login')
     return render_template('login.html', form=form, title='Login')
@@ -120,9 +125,9 @@ def category(category_name):
 def product(product_id):
     product = Product.query.get_or_404(product_id)
     if product:
-        app.logger.info("Successfully query")
+        app.logger.info("Successfully query %s", product.title)
     else:
-        app.logger.warning("Query failed")
+        app.logger.warning("Query %s failed", product.title)
     comments = Comment.query.filter_by(product=product).order_by(Comment.date_posted.desc())
     if comments:
         app.logger.info("Successfully query")
@@ -130,7 +135,7 @@ def product(product_id):
         app.logger.warning("Query failed")
     if request.method == 'POST':
         if current_user.is_authenticated:
-            app.logger.info("Costumer add products")
+            app.logger.info("%s add products", current_user.username)
             quantity = int(request.form.get('quantity'))
             product_incart = Cart.query.filter_by(product_id=product.id, user_id=current_user.id).first()
             if product_incart:
@@ -147,7 +152,7 @@ def product(product_id):
             all_cart = Cart.query.all()
             for i in all_cart:
                 session['quantity'] += 1
-            app.logger.info("Adding to shopping cart successfully")
+            app.logger.info("%s add product to shopping cart successfully", current_user.username)
             flash(f'Adding to shopping cart successfully!', 'success')
         else:
             flash('Please log in to access this page.')
@@ -176,7 +181,7 @@ def product_collect(product_id):
         product_item = Product.query.get(product_id)
         user_item = User.query.get(current_user.id)
         user_item.product.append(product_item)
-        app.logger.info("user add product into Favourite folder")
+        app.logger.info("%s add product into Favourite folder", current_user.username)
         db.session.commit()
         return redirect(url_for('product', product_id=product_id))
     else:
@@ -212,7 +217,7 @@ def new_comment(product_id):
 
     db.session.add(comment)
     db.session.commit()
-    app.logger.info("Successfully added new comment to comment table")
+    app.logger.info("%s successfully added new comment to comment table", current_user.username)
     flash('Adding new comment successfully!')
     return redirect(url_for('product', product_id=product.id))
 
