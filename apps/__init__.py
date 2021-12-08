@@ -1,4 +1,5 @@
 from flask import Flask, request
+from flask.logging import default_handler
 from flask_migrate import Migrate, MigrateCommand
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
@@ -11,17 +12,24 @@ from flask_script import Manager
 import os
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 import logging
+
 # from logging import FileHandler
 # logging.basicConfig(filename='app.log', level=logging.DEBUG,
 #                     format=' %(asctime) s %(levelname) s %(name) s %(threadName) s : %(message) s')
 
 app = Flask(__name__, template_folder='../templates', static_folder='../static')
 
+# logging.basicConfig(filename='record.log', level=logging.DEBUG,
+#                     format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+
 
 @app.before_first_request
 def before_first_request():
     log_level = logging.INFO
-
+    formatter = logging.Formatter(
+        fmt="%(asctime)s %(levelname)s %(filename)s %(funcName)s[line:%(lineno)d] %(message)s",
+        datefmt="%Y-%m-%d %X"
+    )
     for handler in app.logger.handlers:
         app.logger.removeHandler(handler)
     root = os.path.dirname(os.path.abspath(__file__))
@@ -30,12 +38,16 @@ def before_first_request():
         os.mkdir(logdir)
     log_file = os.path.join(logdir, 'app.log')
     handler = logging.FileHandler(log_file)
+    handler.setFormatter(formatter)
     handler.setLevel(log_level)
     app.logger.addHandler(handler)
-
     app.logger.setLevel(log_level)
-    # app.logger.format(' %(asctime) s %(levelname) s %(name) s %(threadName) s : %(message) s')
-
+    for logger in (
+            app.logger,
+            logging.getLogger('sqlalchemy'),
+            logging.getLogger('other_package'),
+    ):
+        logger.addHandler(default_handler)
 
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 app.permanent_session_lifetime = timedelta(minutes=20)
@@ -48,16 +60,14 @@ photos = UploadSet('photos', IMAGES)
 configure_uploads(app, photos)
 patch_request_class(app)
 
-
 # csrf = CSRFProtect(app)
 jinja_options = ImmutableDict(
- extensions=[
-  'jinja2.ext.autoescape', 'jinja2.ext.with_' #Turn auto escaping on
- ])
+    extensions=[
+        'jinja2.ext.autoescape', 'jinja2.ext.with_'  # Turn auto escaping on
+    ])
 
 # Autoescaping depends on you
 app.jinja_env.autoescape = True | False
-
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
@@ -69,4 +79,3 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 from apps import routes
 from apps import models
-

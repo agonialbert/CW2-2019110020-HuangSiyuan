@@ -12,36 +12,35 @@ from flask_login import current_user, login_user, login_required, logout_user
 @app.route("/", methods=['GET', 'POST', 'PUT'])
 @app.route("/home")
 def home():
-    app.logger.info("home info")
+    app.logger.info("Enter the home page")
     # Set the session expiry time
     session.permanent = True
     return render_template('home.html')
 
 
-@app.route("/about")
-def about():
-    return render_template('about.html')
-
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
+    app.logger.info("User try to sign up")
     if current_user.is_authenticated:
         redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
+        app.logger.info("USer submit the information to sign up")
         passwords = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         usernames = form.username.data
         emails = form.email.data
         type_user = request.form.get("type_select")
         if type_user == "Seller":
-            usertype = 2
+            user_type = 2
         elif type_user == "Consumer":
-            usertype = 3
+            user_type = 3
         # type_gender = request.form.get("gender")
         # print(type_gender)
-        users = User(username=usernames, email=emails, password=passwords, user_type=usertype)
+        users = User(username=usernames, email=emails, password=passwords, user_type=user_type)
         db.session.add(users)
         db.session.commit()
+        app.logger.info("Registration successful")
         flash(f'Your account have been created!', 'success')
         return redirect(url_for('login'))
     return render_template('register.html', form=form, title='Register')
@@ -56,27 +55,27 @@ def login():
         user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
-            flash(f'Login succesfully!', 'success')
+            session['email'] = form.email.data
+            flash(f'Login successfully!', 'success')
             if user.user_type == 1 or user.user_type == 2:
+                app.logger.info("Seller login")
                 return redirect(url_for('seller_home'))
             else:
+                app.logger.info("Costumer login")
                 return redirect(url_for('home'))
         else:
+            app.logger.warning("login failed")
             flash(f'Please check the information!', 'danger')
+        return render_template('login.html', form=form, title='Login')
     return render_template('login.html', form=form, title='Login')
-
-
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():
-    session['firstname'] = request.form.get('firstname')
-    session['lastname'] = request.form.get('lastname')
-    session['email'] = request.form.get('email')
-    session['subject'] = request.form.get('subject')
-    session['message'] = request.form.get('message')
-    print(session['firstname'], session['lastname'], session['email'], session['subject'], session['message'])
-    if session['firstname'] != None:
-        flash(f'Message sent!', 'success')
-    return render_template('contact.html', tilte='Contact')
+    # else:
+    #     if 'email' in session:
+    #         return redirect(url_for('home'))
+    #     else:
+    #         if 'email' in request.cookies:
+    #             email = request.cookies.get('email')
+    #             session[email] = email
+    #             return redirect(url_for('home'))
 
 
 @app.route('/sort/<string:category_name>', methods=['POST', 'GET'])
@@ -90,19 +89,21 @@ def soft_products(category_name):
         session['sort'] = sort
     print(sort)
     sorts = {0: Product.title, 1: Product.title, 2: Product.price}
+    print(sorts)
     categories = Category.query.all()
     if category_name != 'All':
         category = Category.query.filter_by(name=category_name).first_or_404()
-        products = Product.query.filter_by(type=category).order_by(sorts[sort].desc()).paginate(page=page, per_page=8)
+        products = Product.query.filter_by(type=category).order_by(sorts[sort].desc()).paginate(page=page, per_page=9)
     else:
-        category = None
-        products = Product.query.order_by(sorts[sort].desc()).paginate(page=page, per_page=8)
+        category = categories
+        products = Product.query.order_by(sorts[sort].desc()).paginate(page=page, per_page=9)
     return render_template('sort.html', title='Categories', products=products, categories=categories, category=category,
                            category_name=category_name)
 
 
 @app.route('/categories/<string:category_name>')
 def category(category_name):
+    app.logger.info("category items")
     page = request.args.get('page', 1, type=int)
     categories = Category.query.all()
     if category_name == 'All':
@@ -118,9 +119,18 @@ def category(category_name):
 @app.route('/product/<int:product_id>', methods=['POST', 'GET'])
 def product(product_id):
     product = Product.query.get_or_404(product_id)
+    if product:
+        app.logger.info("Successfully query")
+    else:
+        app.logger.warning("Query failed")
     comments = Comment.query.filter_by(product=product).order_by(Comment.date_posted.desc())
+    if comments:
+        app.logger.info("Successfully query")
+    else:
+        app.logger.warning("Query failed")
     if request.method == 'POST':
         if current_user.is_authenticated:
+            app.logger.info("Costumer add products")
             quantity = int(request.form.get('quantity'))
             product_incart = Cart.query.filter_by(product_id=product.id, user_id=current_user.id).first()
             if product_incart:
@@ -130,13 +140,15 @@ def product(product_id):
             else:
                 t = Cart(title=product.title, price=product.price, image_file=product.image_file, quantity=quantity,
                          item_total_price=product.price * quantity, user_id=current_user.id, product_id=product.id)
+                app.logger.info("Successfully added items to cart table")
                 db.session.add(t)
                 db.session.commit()
             session['quantity'] = 0
             all_cart = Cart.query.all()
             for i in all_cart:
                 session['quantity'] += 1
-            flash(f'Adding to shopping cart succesfully!', 'success')
+            app.logger.info("Adding to shopping cart successfully")
+            flash(f'Adding to shopping cart successfully!', 'success')
         else:
             flash('Please log in to access this page.')
             return redirect(url_for('login'))
@@ -150,6 +162,7 @@ def product(product_id):
     random_itemid = random.sample(category_item, 4)
     print(random_itemid)
     if 'content_error' in session:
+        app.logger.warning("content error ")
         content_error = session['content_error']
     else:
         content_error = None
@@ -163,9 +176,9 @@ def product_collect(product_id):
         product_item = Product.query.get(product_id)
         user_item = User.query.get(current_user.id)
         user_item.product.append(product_item)
-
+        app.logger.info("user add product into Favourite folder")
         db.session.commit()
-        return redirect(url_for('home'))
+        return redirect(url_for('product', product_id=product_id))
     else:
         flash('Please log in to access this page.')
         return redirect(url_for('login'))
@@ -196,8 +209,10 @@ def new_comment(product_id):
     author = current_user
     # content_chatbot = str(bot.get_response(content))
     comment = Comment(content=content, author=author, product=product)
+
     db.session.add(comment)
     db.session.commit()
+    app.logger.info("Successfully added new comment to comment table")
     flash('Adding new comment successfully!')
     return redirect(url_for('product', product_id=product.id))
 
@@ -249,6 +264,7 @@ def checkout():
                           phone=form.phone.data)
             db.session.add(infor)
             db.session.commit()
+            app.logger.info("Successfully added information to info table")
             cart_items = Cart.query.all()
             items = []
             for i in cart_items:
@@ -259,12 +275,14 @@ def checkout():
                               seller_id=product.seller_id)
                 items.append(c1)
             db.session.add_all(items)
+            app.logger.info("Successfully added product to cart_item table")
             # db.session.add(c1)
             db.session.commit()
             flash(f'You ordered successfully!', 'success')
             for i in cart_items:
                 db.session.delete(i)
                 db.session.commit()
+            app.logger.info("Successfully delete product from cart table")
             return redirect('/home')
         else:
             flash('Please log in to access this page.')
@@ -309,6 +327,7 @@ def remove_from_cart(product_id):
     if cart_item:
         db.session.delete(cart_item)
         db.session.commit()
+    app.logger.info("Successfully delete all product from cart table")
     return redirect(url_for('cart'))
     # return jsonify(code=0, message='OK')
 
@@ -322,13 +341,12 @@ def delete_all():
     return redirect(url_for('cart'))
 
 
-@app.route('/cart/update', methods=['POST'])
-def update_cart():
-    num = request.form.get('update_num')
-    p = request.form.get('update_des')
-    for i in session['cart']:
-        if p in i:
-            i.update({p: int(num)})
+@app.route('/cart/update/<int:product_id>', methods=['POST'])
+def update_cart(product_id):
+    quantity = int(request.form.get('update_num'))
+    cart_item = Cart.query.filter_by(product_id=product_id).first()
+    cart_item.quantity = quantity
+    db.session.commit()
     return redirect(url_for('cart'))
 
 
@@ -353,6 +371,8 @@ def update_cart():
 @app.route('/logout')
 def logout():
     logout_user()
+    app.logger.info("logout")
+
     return redirect(url_for('home'))
 
 
@@ -368,6 +388,7 @@ def user():
         current_user.gender = form.gender.data
         db.session.commit()
         print('Save successfully!')
+        app.logger.info("Successful modification of database information")
         flash(f'Your account information has updated!', 'success')
     elif request.method == 'GET':
         form.username.data = current_user.username
@@ -404,6 +425,7 @@ def seller_delete(id):
         db.session.delete(cartitem)
     db.session.delete(product)
     db.session.commit()
+    app.logger.info("seller delete the product")
     return jsonify(code=0, message="OK")
 
 
@@ -425,6 +447,9 @@ def seller_edit(id):
         # file_url = photos.url(product.image_file)
         print(product.image_file)
         # file_url = photos.url(filename)
+        app.logger.info("seller edit the product")
+        app.logger.info("Successful modification of database information")
+
         db.session.commit()
         return redirect('/seller_home')
     return render_template('seller_edit.html', product=product, form=form)
@@ -433,13 +458,13 @@ def seller_edit(id):
 @app.route('/seller_add', methods=['GET', 'POST'])
 def seller_add():
     form = ProductForm()
-    print(111111111111111111)
     if form.validate_on_submit():
         t = Product()
         t.title = form.title.data
         t.price = form.price.data
         t.description = form.description.data
         t.image_file = photos.save(form.photo.data)
+        t.seller_id = current_user.id
         type = request.form.get("type_select")
         if type == "Male":
             t.category_id = 1
@@ -450,6 +475,10 @@ def seller_add():
         db.session.add(t)
         # gender = gender
         db.session.commit()
+        app.logger.info("seller add the product")
+
+        flash('Add successfully', 'success')
+        return redirect('/seller_home')
     return render_template('seller_add.html', product=product, form=form)
 
 
@@ -461,7 +490,7 @@ def confirmation(id):
     return redirect('/order')
 
 
-# 1: done 2: on the way(return, receive) 3:waiting 4. agree/returning a product 4: reject(apply again )
+# 1: done 2: on the way(return, receive) 3:waiting 4. agree/returning a product 5:applying
 @app.route('/return_item/<int:id>', methods=['GET', 'POST'])
 def return_item(id):
     cart_item = CartItem.query.get(id)
@@ -474,7 +503,6 @@ def return_item(id):
 def seller_order():
     product_items = {}
     if current_user.is_authenticated:
-        print('111111111111111111111')
         cart_items = CartItem.query.filter_by(seller_id=current_user.id)
         for i in cart_items:
             product = Product.query.filter_by(id=i.product_id).first()
@@ -499,10 +527,11 @@ def seller_order():
 
 @app.route('/agree/<int:id>', methods=['GET', 'POST'])
 def agree(id):
-    print('2222222222222')
     cart_item = CartItem.query.get(id)
     print(cart_item)
     cart_item.status = 3
+    app.logger.info("Agree to user return")
+
     db.session.commit()
     return redirect('/seller_order')
 
@@ -512,12 +541,5 @@ def reject(id):
     cart_item = CartItem.query.get(id)
     cart_item.status = 4
     db.session.commit()
+    app.logger.info("Refusal to return a product to a user")
     return redirect('/seller_order')
-
-
-
-
-
-
-
-

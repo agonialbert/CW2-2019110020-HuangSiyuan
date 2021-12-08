@@ -53,19 +53,21 @@
                             {% if history_order[key][9] == 1 %}
                             <p>Transaction successful</p>
                             {% elif (history_order[key][9] == 2) %}
-                            <form action="{{ url_for('confirmation', cart_id = history_order[key][10]) }}" method="POST">
-                                <input class="site-btn" type="submit" valule="Confirm the receipt">
+                            <form action="{{ url_for('confirmation', id = history_order[key][10]) }}" method="POST">
+                                <input class="site-btn" type="submit" value="Confirm the receipt">
                             </form><br>
-                            <form action="{{ url_for('return_item', cart_id = history_order[key][10]) }}" method="POST">
+                            <form action="{{ url_for('return_item', id = history_order[key][10]) }}" method="POST">
                                 <input class="site-btn" type="submit" value="Request a return">
                             </form>
                             {% elif (history_order[key][9] == 3) %}
-                            <p>Agree</p>
+                            <p>Agree to return the product</p>
                             {% elif (history_order[key][9] == 4) %}
-                            <p>Reject</p>
+                            <p>Reject returning</p>
                             <form action="{{ url_for('return_item', product_id = history_order[key][10]) }}" method="POST">
                                 <input class="site-btn clear-btn" type="submit" value="Request again">
                             </form>
+                            {% elif (history_order[key][9] == 4) %}
+                             <p>Applying</p>
                             {% endif %}
 
                         </td>
