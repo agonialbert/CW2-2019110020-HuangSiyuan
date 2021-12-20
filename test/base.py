@@ -102,8 +102,8 @@ class AdminTestCase(BaseTestCase):
     #     self.assertEqual(response.status_code, 500)
 
     def test_delete_post(self):
-        response = self.client.post(url_for('seller_delete', id=30), data=dict(
-            id=30
+        response = self.client.post(url_for('seller_delete', id=38), data=dict(
+            id=38
         ), follow_redirects=True)
         data = response.get_data(as_text=True)
         self.assertEqual(response.status_code, 200)
@@ -117,12 +117,12 @@ class UserTestCase(BaseTestCase):
         ), follow_redirects=True)
 
     def test_add_cart(self):
-        response = self.client.get(url_for('product', product_id=30))
+        response = self.client.get(url_for('product', product_id=31))
         data = response.get_data(as_text=True)
         print(data)
-        # self.assertIn('Product', data)
+        # self.assertIn('Product.', data)
 
-        response = self.client.post(url_for('product', product_id=30))
+        response = self.client.post(url_for('product', product_id=31))
         data = response.get_data(as_text=True)
         self.assertEqual(response.status_code, 302)
 
