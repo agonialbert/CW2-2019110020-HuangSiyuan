@@ -19,14 +19,13 @@
     <div class="container">
         <form action="" class="checkout-form" method="POST">
             {{ form.hidden_tag() }}
-            {{ form.csrf_token }}
+
             <div class="row">
                 <div class="col-lg-12">
                     <h3>Personal Information</h3>
                 </div>
 
                 <div class="col-lg-12">
-                {{ form.csrf_token }}
                         <div class="row">
                             <div class="col-lg-2">
                                 <p class="in-name">{{ form.username.label }} :</p>

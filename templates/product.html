@@ -64,12 +64,10 @@
                         <div class="product-quantity">
                             <div class="pro-qty">
                                 <label>
-                                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                                     <input type="text" value="1" name = "quantity">
                                 </label>
                             </div>
                         </div>
-                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                         <input type="submit" class="primary-btn pc-btn" value="Add to cart">
                           <a href="{{ url_for('product_collect', product_id = product.id)}}">
                               <img src="{{ url_for('static', filename='img/icons/heart.svg') }}" alt="" style="width: 22px; height: 24px">
@@ -98,7 +96,6 @@
                     <form class="contact-form" id="comment_form" action="{{ url_for('new_comment', product_id = product.id) }}">
 
                         <label>
-                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                             <input type="text" placeholder="Type your text ..." name="content">
                         </label>
                     </form>
@@ -108,7 +105,6 @@
                 </div>
                 <div class="col-lg-1">
                     <p class="">
-                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                         <input type="submit" form="comment_form" value="send" class="btn btn-outline-light btn-outline-dark" ></p>
                 </div>
             </div> 

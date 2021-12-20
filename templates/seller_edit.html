@@ -34,7 +34,6 @@
 
                                 <form action="" method="post" name="edit" enctype="multipart/form-data">
                                     {{ form.hidden_tag() }}
-                                    {{ form.csrf_token }}
                                     <p>Title:</p>
                                     {% if form.title.errors %}
                                     {{ form.title(class="form-control form-control-lg is-invalid") }}
@@ -71,24 +70,7 @@
                         {#            <input type="datetime-local" name="datetime"class="">#}
                                         {{ form.description(cols='80',class_="form-control form-control-lg") }}<br>
                                     {% endif %}
-{#                                    {{ form.csrf_token }}#}
-{#                                     <div class="form-group">#}
-{#                                        <label for="exampleInputFile">{{ form.image.label.text }}</label>#}
-{#                                        <input type="file" name="image" id="exampleInputFile">#}
-{#                                        <p class="help-block">新闻图片上传</p>#}
-{#                                    </div>#}
                                     <p>Image upload:</p>
-{#                                    {% if form.image_file.errors %}#}
-{#                                    {{ form.image_file(class="form-control form-control-lg is-invalid") }}#}
-{#                                    <div class="invalid-feedback">#}
-{#                                        {% for error in form.image_file.errors %}#}
-{#                                            <span>{{ error }}</span>#}
-{#                                        {% endfor %}#}
-{#                                    </div>#}
-{#                                    {% else %}#}
-                        {#            <input type="datetime-local" name="datetime"class="">#}
-{#                                        {{ form.image_file(cols='80',class_="form-control form-control-lg") }}<br>#}
-{#                                    {% endif %}#}
                                     <br>
                                          {{ form.photo }}
                                      {% for error in form.photo.errors %}

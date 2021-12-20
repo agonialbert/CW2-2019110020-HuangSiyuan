@@ -81,20 +81,7 @@ class ProductForm(FlaskForm):
     submit = SubmitField('Upload')
 
 
-class RequestResetForm(FlaskForm):
-    email = StringField('email', validators=[DataRequired(), Email()])
-    submit = SubmitField('reset')
 
-    def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
-        if user is None:
-            raise ValidationError('the email is not exist!')
-
-
-# class ResetPasswordForm(FlaskForm):
-#     password = PasswordField('Password', validators=[DataRequired(), Length(min=2, max=20)])
-#     confirm_password = PasswordField('Confirm Password', validators=[DataRequired, EqualTo('password')])
-#     submit = SubmitField('submit')
 
 
 

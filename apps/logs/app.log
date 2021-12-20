@@ -1578,3 +1578,72 @@ jinja2.exceptions.UndefinedError: 'csrf_token' is undefined
 2021-12-20 14:55:27 INFO routes.py home[line:16] Enter the home page
 2021-12-20 14:55:27 INFO routes.py register[line:25] User try to sign up
 2021-12-20 14:55:27 INFO routes.py register[line:25] User try to sign up
+2021-12-20 15:11:46 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:11:46 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:11:56 INFO routes.py login[line:67] 12 login
+2021-12-20 15:11:56 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:12:01 INFO routes.py category[line:98] category items
+2021-12-20 15:12:03 INFO routes.py product[line:115] Successfully query Nike ZoomX Vaporfly Next% 2
+2021-12-20 15:12:03 INFO routes.py product[line:120] Successfully query
+2021-12-20 15:12:06 INFO routes.py product[line:115] Successfully query Nike ZoomX Vaporfly Next% 2
+2021-12-20 15:12:06 INFO routes.py product[line:120] Successfully query
+2021-12-20 15:12:06 INFO routes.py product[line:125] 12 add products
+2021-12-20 15:12:06 INFO routes.py product[line:135] Successfully added items to cart table
+2021-12-20 15:12:06 INFO routes.py product[line:142] 12 add product to shopping cart successfully
+2021-12-20 15:12:09 INFO routes.py product_collect[line:170] 12 add product into Favourite folder
+2021-12-20 15:12:09 INFO routes.py product[line:115] Successfully query Nike ZoomX Vaporfly Next% 2
+2021-12-20 15:12:09 INFO routes.py product[line:120] Successfully query
+2021-12-20 15:13:33 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:14:10 INFO routes.py checkout[line:258] Successfully added information to info table
+2021-12-20 15:14:11 INFO routes.py checkout[line:269] Successfully added product to cart_item table
+2021-12-20 15:14:11 INFO routes.py checkout[line:276] Successfully delete product from cart table
+2021-12-20 15:14:11 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:14:22 INFO routes.py logout[line:344] logout
+2021-12-20 15:14:22 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:14:35 INFO routes.py login[line:64] 321 login
+2021-12-20 15:14:43 INFO routes.py agree[line:495] Agree to user return
+2021-12-20 15:14:44 INFO routes.py reject[line:506] Refusal to return a product to a user
+2021-12-20 15:15:06 INFO routes.py seller_add[line:442] seller add the product
+2021-12-20 15:16:14 INFO routes.py seller_edit[line:414] seller edit the product
+2021-12-20 15:16:14 INFO routes.py seller_edit[line:415] Successful modification of database information
+2021-12-20 15:22:21 INFO routes.py seller_delete[line:395] seller delete the product
+2021-12-20 15:22:21 INFO routes.py logout[line:344] logout
+2021-12-20 15:22:21 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:22:21 INFO routes.py register[line:25] User try to sign up
+2021-12-20 15:22:21 INFO routes.py register[line:25] User try to sign up
+2021-12-20 15:22:21 INFO routes.py logout[line:344] logout
+2021-12-20 15:22:21 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:22:21 INFO routes.py register[line:25] User try to sign up
+2021-12-20 15:22:21 INFO routes.py register[line:25] User try to sign up
+2021-12-20 15:22:21 INFO routes.py logout[line:344] logout
+2021-12-20 15:22:21 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:22:21 INFO routes.py register[line:25] User try to sign up
+2021-12-20 15:22:21 INFO routes.py register[line:25] User try to sign up
+2021-12-20 15:23:39 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:24:01 INFO routes.py logout[line:344] logout
+2021-12-20 15:24:01 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:24:07 INFO routes.py category[line:98] category items
+2021-12-20 15:24:09 INFO routes.py product[line:115] Successfully query Kyrie 7
+2021-12-20 15:24:09 INFO routes.py product[line:120] Successfully query
+2021-12-20 15:24:18 INFO routes.py product[line:115] Successfully query Kyrie 7
+2021-12-20 15:24:18 INFO routes.py product[line:120] Successfully query
+2021-12-20 15:25:27 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:25:27 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:25:41 INFO routes.py login[line:67] 12 login
+2021-12-20 15:25:41 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:25:46 INFO routes.py category[line:98] category items
+2021-12-20 15:25:48 INFO routes.py product[line:115] Successfully query test
+2021-12-20 15:25:48 INFO routes.py product[line:120] Successfully query
+2021-12-20 15:25:51 INFO routes.py product[line:115] Successfully query test
+2021-12-20 15:25:51 INFO routes.py product[line:120] Successfully query
+2021-12-20 15:25:51 INFO routes.py product[line:125] 12 add products
+2021-12-20 15:25:51 INFO routes.py product[line:135] Successfully added items to cart table
+2021-12-20 15:25:51 INFO routes.py product[line:142] 12 add product to shopping cart successfully
+2021-12-20 15:26:02 INFO routes.py checkout[line:258] Successfully added information to info table
+2021-12-20 15:26:02 INFO routes.py checkout[line:269] Successfully added product to cart_item table
+2021-12-20 15:26:02 INFO routes.py checkout[line:276] Successfully delete product from cart table
+2021-12-20 15:26:02 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:29:06 INFO routes.py logout[line:344] logout
+2021-12-20 15:29:06 INFO routes.py home[line:16] Enter the home page
+2021-12-20 15:29:21 INFO routes.py login[line:64] 321 login
+2021-12-20 15:29:28 INFO routes.py seller_delete[line:395] seller delete the product
