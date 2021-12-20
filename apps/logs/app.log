@@ -1729,3 +1729,11 @@ jinja2.exceptions.UndefinedError: 'csrf_token' is undefined
 2021-12-20 15:50:16 INFO routes.py home[line:16] Enter the home page
 2021-12-20 15:50:30 INFO routes.py login[line:67] 12 login
 2021-12-20 15:50:30 INFO routes.py home[line:16] Enter the home page
+2021-12-20 16:47:18 INFO routes.py home[line:16] Enter the home page
+2021-12-20 16:47:21 INFO routes.py register[line:25] User try to sign up
+2021-12-20 16:49:57 INFO routes.py register[line:25] User try to sign up
+2021-12-20 16:50:12 INFO routes.py register[line:25] User try to sign up
+2021-12-20 16:50:12 INFO routes.py register[line:30] USer submit the information to sign up
+2021-12-20 16:50:12 INFO routes.py register[line:46] Registration successful
+2021-12-20 16:50:46 INFO routes.py login[line:67] 12 login
+2021-12-20 16:50:46 INFO routes.py home[line:16] Enter the home page
