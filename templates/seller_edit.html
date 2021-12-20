@@ -34,6 +34,7 @@
 
                                 <form action="" method="post" name="edit" enctype="multipart/form-data">
                                     {{ form.hidden_tag() }}
+                                    {{ form.csrf_token }}
                                     <p>Title:</p>
                                     {% if form.title.errors %}
                                     {{ form.title(class="form-control form-control-lg is-invalid") }}

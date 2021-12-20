@@ -19,16 +19,18 @@
     <div class="container">
         <form action="" class="checkout-form" method="POST">
             {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
             <div class="row">
                 <div class="col-lg-12">
                     <h3>Personal Information</h3>
                 </div>
-                
+
                 <div class="col-lg-12">
+                {{ form.csrf_token }}
                         <div class="row">
                             <div class="col-lg-2">
                                 <p class="in-name">{{ form.username.label }} :</p>
-                                
+
                             </div>
                             <div class="col-lg-10 " >
                                 <!-- <input type="text" placeholder="Type your username"> -->
@@ -43,12 +45,12 @@
                                     {{ form.username(class="form-control form-control-lg") }}
                                 {% endif %}
                             </div>
-            
+
                         </div>
                     <div class="row">
                         <div class="col-lg-2">
                             <p class="in-name">{{ form.email.label }} :</p>
-                            
+
                         </div>
                         <div class="col-lg-10">
                             {% if form.email.errors %}
@@ -62,13 +64,13 @@
                                 {{ form.email(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
-        
+
                     </div>
 
                     <div class="row">
                         <div class="col-lg-2">
                             <p class="in-name">{{ form.password.label }} :</p>
-                            
+
                         </div>
                         <div class="col-lg-10">
                             {% if form.password.errors %}
@@ -138,7 +140,7 @@
                         </div>
                     </div>
 
-               
+
                 </div>
             </div>
         </form>

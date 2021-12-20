@@ -12,7 +12,7 @@ function myFunction() {
         <div class="row">
             <div class="col-lg-4">
                 <div class="page-breadcrumb">
-                    <h2>Sign in<span>.</span></h2>
+                    <h2>Reset the password<span>.</span></h2>
                 </div>
             </div>
         </div>
@@ -24,14 +24,13 @@ function myFunction() {
     <div class="container">
         <form action="" class="checkout-form" method='POST'>
             {{ form.hidden_tag() }}
-        {{ form.csrf_token }}
+            {{ form.csrf_token }}
             <div class="row">
                 <div class="col-lg-12">
                     <h3>Login</h3>
                 </div>
                 <div class="col-lg-12">
                     <div class="row">
-                    {{ form.csrf_token }}
                         <div class="col-lg-2">
                             <p class="in-name">{{ form.email.label }} :</p>
                         </div>
@@ -47,38 +46,17 @@ function myFunction() {
                                 {{ form.email(class="form-control form-control-lg" ) }}
                             {% endif %}
                         </div>
-        
-                    </div>
-                    <div class="row">
-                    {{ form.csrf_token }}
-                        <div class="col-lg-2">
-                            <p class="in-name">{{ form.password.label }} :</p>
-                        </div>
-                        <div class="col-lg-10">
-                            {% if form.password.errors %}
-                                {{ form.password(class="form-control form-control-lg is-invalid") }}
-                                    <div class="invalid-feedback">
-                                        {% for error in form.password.errors %}
-                                            <span>{{ error }}</span>
-                                        {% endfor %}
-                                    </div>
-                            {% else %}
-                                {{ form.password(class="form-control form-control-lg", type="text") }}
-                            {% endif %}
-                        </div>
                     </div>
                 </div>
-
             </div>
             <div class="row">
-                {{ form.csrf_token }}
                 <div class="col-lg-12">
                     <div class="payment-method text-center">
-                        <button type="submit" onclick="myFunction()">Sign in</button>
-                        <a href="{{ url_for('reset_request') }}">forget the password</a>
+                        {{ form.submit(class="btn btn-outline-info") }}
                     </div>
                 </div>
             </div>
+
         </form>
     </div>
 </section>

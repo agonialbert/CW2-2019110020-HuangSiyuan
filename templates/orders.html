@@ -54,16 +54,19 @@
                             <p>Transaction successful</p>
                             {% elif (history_order[key][9] == 2) %}
                             <form action="{{ url_for('confirmation', id = history_order[key][10]) }}" method="POST">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                                 <input class="site-btn" type="submit" value="Confirm the receipt">
                             </form><br>
                             <form action="{{ url_for('return_item', id = history_order[key][10]) }}" method="POST">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                                 <input class="site-btn" type="submit" value="Request a return">
                             </form>
                             {% elif (history_order[key][9] == 3) %}
                             <p>Agree to return the product</p>
                             {% elif (history_order[key][9] == 4) %}
                             <p>Reject returning</p>
-                            <form action="{{ url_for('return_item', product_id = history_order[key][10]) }}" method="POST">
+                            <form action="{{ url_for('return_item', id = history_order[key][10]) }}" method="POST">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                                 <input class="site-btn clear-btn" type="submit" value="Request again">
                             </form>
                             {% elif (history_order[key][9] == 5) %}

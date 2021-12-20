@@ -560,3 +560,1021 @@ TypeError: storage must be a werkzeug.FileStorage
 2021-12-08 23:35:12 INFO routes.py product[line:128] Successfully query Nike Sportswear Swoosh
 2021-12-08 23:35:12 INFO routes.py product[line:133] Successfully query
 2021-12-08 23:35:28 INFO routes.py login[line:66] 321 login
+2021-12-09 00:29:17 INFO routes.py logout[line:379] logout
+2021-12-09 00:29:17 INFO routes.py home[line:15] Enter the home page
+2021-12-09 00:30:22 INFO routes.py logout[line:379] logout
+2021-12-09 00:30:22 INFO routes.py home[line:15] Enter the home page
+2021-12-09 00:30:57 INFO routes.py logout[line:379] logout
+2021-12-09 00:30:57 INFO routes.py home[line:15] Enter the home page
+2021-12-09 00:36:45 INFO routes.py logout[line:379] logout
+2021-12-09 00:36:45 INFO routes.py home[line:15] Enter the home page
+2021-12-09 00:38:53 INFO routes.py logout[line:379] logout
+2021-12-09 00:38:53 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:00:33 INFO routes.py logout[line:379] logout
+2021-12-09 01:00:33 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:01:08 INFO routes.py logout[line:379] logout
+2021-12-09 01:01:08 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:01:38 INFO routes.py register[line:25] User try to sign up
+2021-12-09 01:02:01 INFO routes.py logout[line:379] logout
+2021-12-09 01:02:01 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:02:01 INFO routes.py logout[line:379] logout
+2021-12-09 01:02:01 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:05:00 INFO routes.py logout[line:379] logout
+2021-12-09 01:05:00 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:05:00 INFO routes.py logout[line:379] logout
+2021-12-09 01:05:00 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:07:28 INFO routes.py register[line:25] User try to sign up
+2021-12-09 01:07:41 INFO routes.py logout[line:379] logout
+2021-12-09 01:07:41 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:12:17 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:14:55 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:14:55 INFO routes.py logout[line:379] logout
+2021-12-09 01:14:55 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:14:55 INFO routes.py logout[line:379] logout
+2021-12-09 01:14:55 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:16:35 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:16:51 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:17:14 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:17:21 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:17:21 INFO routes.py logout[line:379] logout
+2021-12-09 01:17:21 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:17:21 INFO routes.py logout[line:379] logout
+2021-12-09 01:17:21 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:17:26 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:17:26 INFO routes.py logout[line:379] logout
+2021-12-09 01:17:26 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:17:26 INFO routes.py logout[line:379] logout
+2021-12-09 01:17:26 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:20:36 ERROR app.py log_exception[line:1891] Exception on /seller_edit/30 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:20:36 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:20:36 INFO routes.py logout[line:379] logout
+2021-12-09 01:20:36 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:20:36 INFO routes.py logout[line:379] logout
+2021-12-09 01:20:36 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:22:02 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:22:09 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:22:19 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:22:25 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:22:31 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:22:40 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:23:13 INFO routes.py logout[line:379] logout
+2021-12-09 01:23:13 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:23:13 INFO routes.py logout[line:379] logout
+2021-12-09 01:23:13 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:23:46 ERROR app.py log_exception[line:1891] Exception on /seller_edit/30 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:23:46 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:23:46 INFO routes.py logout[line:379] logout
+2021-12-09 01:23:46 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:23:46 INFO routes.py logout[line:379] logout
+2021-12-09 01:23:46 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:24:26 INFO routes.py seller_delete[line:433] seller delete the product
+2021-12-09 01:24:26 ERROR app.py log_exception[line:1891] Exception on /seller_edit/2 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 451, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-09 01:24:26 INFO routes.py logout[line:379] logout
+2021-12-09 01:24:26 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:24:45 ERROR app.py log_exception[line:1891] Exception on /seller_delete/30 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2634, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 431, in seller_delete
+    db.session.delete(product)
+  File "<string>", line 2, in delete
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2636, in delete
+    util.raise_(
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2021-12-09 01:24:45 INFO routes.py logout[line:379] logout
+2021-12-09 01:24:45 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:25:51 ERROR app.py log_exception[line:1891] Exception on /seller_delete/30 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2634, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 431, in seller_delete
+    db.session.delete(product)
+  File "<string>", line 2, in delete
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2636, in delete
+    util.raise_(
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2021-12-09 01:26:37 INFO routes.py seller_delete[line:433] seller delete the product
+2021-12-09 01:26:37 INFO routes.py logout[line:379] logout
+2021-12-09 01:26:37 INFO routes.py home[line:15] Enter the home page
+2021-12-09 01:43:38 INFO routes.py home[line:15] Enter the home page
+2021-12-17 10:36:47 ERROR app.py log_exception[line:1891] Exception on /seller_delete/30 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2634, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 432, in seller_delete
+    db.session.delete(product)
+  File "<string>", line 2, in delete
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2636, in delete
+    util.raise_(
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2021-12-17 10:37:03 INFO routes.py logout[line:380] logout
+2021-12-17 10:37:03 INFO routes.py home[line:16] Enter the home page
+2021-12-17 10:37:14 INFO routes.py register[line:26] User try to sign up
+2021-12-17 10:37:44 INFO routes.py logout[line:380] logout
+2021-12-17 10:37:44 INFO routes.py home[line:16] Enter the home page
+2021-12-17 10:55:42 INFO routes.py logout[line:380] logout
+2021-12-17 10:55:42 INFO routes.py home[line:16] Enter the home page
+2021-12-17 10:55:43 INFO routes.py logout[line:380] logout
+2021-12-17 10:55:43 INFO routes.py home[line:16] Enter the home page
+2021-12-17 11:24:07 INFO routes.py seller_delete[line:434] seller delete the product
+2021-12-17 11:24:29 ERROR app.py log_exception[line:1891] Exception on /seller_delete/31 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2634, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 432, in seller_delete
+    db.session.delete(product)
+  File "<string>", line 2, in delete
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2636, in delete
+    util.raise_(
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2021-12-17 11:24:38 ERROR app.py log_exception[line:1891] Exception on /seller_delete/31 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2634, in delete
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 432, in seller_delete
+    db.session.delete(product)
+  File "<string>", line 2, in delete
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2636, in delete
+    util.raise_(
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2021-12-17 11:24:59 INFO routes.py seller_delete[line:434] seller delete the product
+2021-12-17 11:37:01 ERROR app.py log_exception[line:1891] Exception on /seller_edit/30 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 452, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-17 11:37:42 ERROR app.py log_exception[line:1891] Exception on /seller_edit/30 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 452, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-17 11:38:09 ERROR app.py log_exception[line:1891] Exception on /seller_edit/30 [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 452, in seller_edit
+    product.image_file = photos.save(form.photo.data)
+  File "G:\flaskProject\venv\lib\site-packages\flask_uploads.py", line 402, in save
+    raise TypeError("storage must be a werkzeug.FileStorage")
+TypeError: storage must be a werkzeug.FileStorage
+2021-12-18 10:23:35 INFO routes.py logout[line:380] logout
+2021-12-18 10:23:35 INFO routes.py home[line:16] Enter the home page
+2021-12-18 10:23:35 INFO routes.py logout[line:380] logout
+2021-12-18 10:23:35 INFO routes.py home[line:16] Enter the home page
+2021-12-18 10:24:44 INFO routes.py logout[line:380] logout
+2021-12-18 10:24:44 INFO routes.py home[line:16] Enter the home page
+2021-12-18 10:24:44 INFO routes.py logout[line:380] logout
+2021-12-18 10:24:44 INFO routes.py home[line:16] Enter the home page
+2021-12-18 10:26:41 INFO routes.py seller_delete[line:434] seller delete the product
+2021-12-18 10:26:41 INFO routes.py logout[line:380] logout
+2021-12-18 10:26:41 INFO routes.py home[line:16] Enter the home page
+2021-12-18 10:26:41 INFO routes.py logout[line:380] logout
+2021-12-18 10:26:41 INFO routes.py home[line:16] Enter the home page
+2021-12-18 10:48:47 INFO routes.py logout[line:380] logout
+2021-12-18 10:48:47 INFO routes.py home[line:16] Enter the home page
+2021-12-18 10:49:12 INFO routes.py logout[line:380] logout
+2021-12-18 10:49:12 INFO routes.py home[line:16] Enter the home page
+2021-12-18 11:00:35 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:00:35 INFO routes.py product[line:134] Successfully query
+2021-12-18 11:13:33 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:13:33 INFO routes.py product[line:134] Successfully query
+2021-12-18 11:20:37 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:20:37 INFO routes.py product[line:134] Successfully query
+2021-12-18 11:20:37 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:20:37 INFO routes.py product[line:134] Successfully query
+2021-12-18 11:20:52 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:20:52 INFO routes.py product[line:134] Successfully query
+2021-12-18 11:20:52 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:20:52 INFO routes.py product[line:134] Successfully query
+2021-12-18 11:21:14 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:21:14 INFO routes.py product[line:134] Successfully query
+2021-12-18 11:21:14 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:21:14 INFO routes.py product[line:134] Successfully query
+2021-12-18 11:21:21 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:21:21 INFO routes.py product[line:134] Successfully query
+2021-12-18 11:21:22 INFO routes.py product[line:129] Successfully query test
+2021-12-18 11:21:22 INFO routes.py product[line:134] Successfully query
+2021-12-18 12:19:32 INFO routes.py product[line:129] Successfully query test
+2021-12-18 12:19:32 INFO routes.py product[line:134] Successfully query
+2021-12-18 12:19:32 INFO routes.py product[line:129] Successfully query test
+2021-12-18 12:19:32 INFO routes.py product[line:134] Successfully query
+2021-12-18 12:19:33 INFO routes.py logout[line:380] logout
+2021-12-18 12:19:33 INFO routes.py home[line:16] Enter the home page
+2021-12-18 12:19:53 INFO routes.py product[line:129] Successfully query test
+2021-12-18 12:19:53 INFO routes.py product[line:134] Successfully query
+2021-12-18 12:19:53 INFO routes.py product[line:129] Successfully query test
+2021-12-18 12:19:53 INFO routes.py product[line:134] Successfully query
+2021-12-18 12:19:53 INFO routes.py logout[line:380] logout
+2021-12-18 12:19:53 INFO routes.py home[line:16] Enter the home page
+2021-12-18 13:28:02 INFO routes.py home[line:16] Enter the home page
+2021-12-18 13:28:03 INFO routes.py home[line:16] Enter the home page
+2021-12-18 13:28:14 ERROR app.py log_exception[line:1891] Exception on /reset_password [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 568, in reset_request
+    send_rest_email(user)
+  File "G:\flaskProject\apps\routes.py", line 554, in send_rest_email
+    token = user.get_reset_token()
+  File "G:\flaskProject\apps\models.py", line 33, in get_reset_token
+    s = Serializer(current_app.config['SECRET_KEY'], expires_sec)
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\ext\serializer.py", line 76, in Serializer
+    pickler = pickle.Pickler(*args, **kw)
+TypeError: file must have a 'write' attribute
+2021-12-18 15:27:58 INFO routes.py home[line:16] Enter the home page
+2021-12-18 15:28:08 ERROR app.py log_exception[line:1891] Exception on /reset_password [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 568, in reset_request
+    send_rest_email(user)
+  File "G:\flaskProject\apps\routes.py", line 554, in send_rest_email
+    token = user.get_reset_token()
+  File "G:\flaskProject\apps\models.py", line 33, in get_reset_token
+    s = Serializer(app.config['SECRET_KEY'], expires_sec)
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\ext\serializer.py", line 76, in Serializer
+    pickler = pickle.Pickler(*args, **kw)
+ValueError: pickle protocol must be <= 5
+2021-12-19 13:04:36 INFO routes.py home[line:16] Enter the home page
+2021-12-19 13:04:48 INFO routes.py category[line:111] category items
+2021-12-19 13:05:05 INFO routes.py login[line:69] 123 login
+2021-12-19 13:05:05 INFO routes.py home[line:16] Enter the home page
+2021-12-19 13:05:11 INFO routes.py logout[line:379] logout
+2021-12-19 13:05:11 INFO routes.py home[line:16] Enter the home page
+2021-12-19 13:05:26 ERROR app.py log_exception[line:1891] Exception on /reset_password [POST]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 568, in reset_request
+    send_rest_email(user)
+  File "G:\flaskProject\apps\routes.py", line 554, in send_rest_email
+    token = user.get_reset_token()
+  File "G:\flaskProject\apps\models.py", line 33, in get_reset_token
+    s = Serializer(app.config['SECRET_KEY'], expires_sec)
+  File "G:\flaskProject\venv\lib\site-packages\sqlalchemy\ext\serializer.py", line 76, in Serializer
+    pickler = pickle.Pickler(*args, **kw)
+ValueError: pickle protocol must be <= 5
+2021-12-19 15:46:26 INFO routes.py home[line:16] Enter the home page
+2021-12-19 15:57:21 INFO routes.py category[line:111] category items
+2021-12-19 15:57:24 INFO routes.py product[line:128] Successfully query test
+2021-12-19 15:57:24 INFO routes.py product[line:133] Successfully query
+2021-12-19 15:57:42 INFO routes.py product[line:128] Successfully query test
+2021-12-19 15:57:42 INFO routes.py product[line:133] Successfully query
+2021-12-19 15:57:49 INFO routes.py product[line:128] Successfully query test
+2021-12-19 15:57:49 INFO routes.py product[line:133] Successfully query
+2021-12-19 15:58:00 INFO routes.py product[line:128] Successfully query test
+2021-12-19 15:58:00 INFO routes.py product[line:133] Successfully query
+2021-12-19 15:58:39 INFO routes.py product[line:128] Successfully query test
+2021-12-19 15:58:39 INFO routes.py product[line:133] Successfully query
+2021-12-19 15:58:50 INFO routes.py login[line:69] 123 login
+2021-12-19 15:58:50 INFO routes.py home[line:16] Enter the home page
+2021-12-19 15:58:56 INFO routes.py category[line:111] category items
+2021-12-19 15:58:58 INFO routes.py product[line:128] Successfully query Nike Blazer Mid '77 Jumbo
+2021-12-19 15:58:58 INFO routes.py product[line:133] Successfully query
+2021-12-19 15:59:01 INFO routes.py product[line:128] Successfully query Nike Blazer Mid '77 Jumbo
+2021-12-19 15:59:01 INFO routes.py product[line:133] Successfully query
+2021-12-19 15:59:01 INFO routes.py product[line:138] 123 add products
+2021-12-19 15:59:01 INFO routes.py product[line:148] Successfully added items to cart table
+2021-12-19 15:59:01 INFO routes.py product[line:155] 123 add product to shopping cart successfully
+2021-12-19 15:59:13 INFO routes.py product[line:128] Successfully query Nike Blazer Mid '77 Jumbo
+2021-12-19 15:59:13 INFO routes.py product[line:133] Successfully query
+2021-12-19 15:59:13 INFO routes.py product[line:138] 123 add products
+2021-12-19 15:59:13 INFO routes.py product[line:155] 123 add product to shopping cart successfully
+2021-12-19 15:59:40 INFO routes.py checkout[line:272] Successfully added information to info table
+2021-12-19 15:59:40 INFO routes.py checkout[line:283] Successfully added product to cart_item table
+2021-12-19 15:59:40 INFO routes.py checkout[line:290] Successfully delete product from cart table
+2021-12-19 15:59:40 INFO routes.py home[line:16] Enter the home page
+2021-12-19 16:00:22 INFO routes.py home[line:16] Enter the home page
+2021-12-19 16:00:22 INFO routes.py home[line:16] Enter the home page
+2021-12-19 16:00:39 ERROR app.py log_exception[line:1891] Exception on /order [GET]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 323, in order
+    return render_template('orders.html', history_order=history_order)
+  File "G:\flaskProject\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "G:\flaskProject\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "G:\flaskProject\apps\../templates\orders.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "G:\flaskProject\apps\../templates\layout.html", line 109, in top-level template code
+    {% block content %}{% endblock %}
+  File "G:\flaskProject\apps\../templates\orders.html", line 68, in block "content"
+    <form action="{{ url_for('return_item', product_id = history_order[key][10]) }}" method="POST">
+  File "G:\flaskProject\venv\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "G:\flaskProject\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'return_item' with values ['product_id']. Did you forget to specify values ['id']?
+2021-12-19 16:00:43 ERROR app.py log_exception[line:1891] Exception on /order [GET]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 323, in order
+    return render_template('orders.html', history_order=history_order)
+  File "G:\flaskProject\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "G:\flaskProject\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "G:\flaskProject\apps\../templates\orders.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "G:\flaskProject\apps\../templates\layout.html", line 109, in top-level template code
+    {% block content %}{% endblock %}
+  File "G:\flaskProject\apps\../templates\orders.html", line 68, in block "content"
+    <form action="{{ url_for('return_item', product_id = history_order[key][10]) }}" method="POST">
+  File "G:\flaskProject\venv\lib\site-packages\flask\helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "G:\flaskProject\venv\lib\site-packages\werkzeug\routing.py", line 2020, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'return_item' with values ['product_id']. Did you forget to specify values ['id']?
+2021-12-19 17:01:24 INFO routes.py home[line:16] Enter the home page
+2021-12-19 17:01:24 INFO routes.py home[line:16] Enter the home page
+2021-12-19 17:01:33 INFO routes.py login[line:69] 123 login
+2021-12-19 17:01:33 INFO routes.py home[line:16] Enter the home page
+2021-12-19 17:04:48 INFO routes.py home[line:16] Enter the home page
+2021-12-19 17:04:48 INFO routes.py home[line:16] Enter the home page
+2021-12-20 11:18:42 INFO routes.py home[line:16] Enter the home page
+2021-12-20 11:18:42 INFO routes.py home[line:16] Enter the home page
+2021-12-20 11:18:55 INFO routes.py login[line:67] 123 login
+2021-12-20 11:18:55 INFO routes.py home[line:16] Enter the home page
+2021-12-20 11:19:03 INFO routes.py home[line:16] Enter the home page
+2021-12-20 11:19:08 INFO routes.py category[line:98] category items
+2021-12-20 11:19:11 INFO routes.py product[line:115] Successfully query test
+2021-12-20 11:19:11 INFO routes.py product[line:120] Successfully query
+2021-12-20 11:19:11 ERROR app.py log_exception[line:1891] Exception on /product/30 [GET]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 160, in product
+    return render_template('product.html', title='Product', product=product, random_itemid=random_itemid,
+  File "G:\flaskProject\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "G:\flaskProject\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "G:\flaskProject\apps\../templates\product.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "G:\flaskProject\apps\../templates\layout.html", line 109, in top-level template code
+    {% block content %}{% endblock %}
+  File "G:\flaskProject\apps\../templates\product.html", line 67, in block "content"
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+jinja2.exceptions.UndefinedError: 'csrf_token' is undefined
+2021-12-20 11:19:12 INFO routes.py category[line:98] category items
+2021-12-20 11:19:14 INFO routes.py product[line:115] Successfully query Nike ZoomX Vaporfly Next% 2
+2021-12-20 11:19:14 INFO routes.py product[line:120] Successfully query
+2021-12-20 11:19:14 ERROR app.py log_exception[line:1891] Exception on /product/19 [GET]
+Traceback (most recent call last):
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "G:\flaskProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "G:\flaskProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "G:\flaskProject\apps\routes.py", line 160, in product
+    return render_template('product.html', title='Product', product=product, random_itemid=random_itemid,
+  File "G:\flaskProject\venv\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "G:\flaskProject\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "G:\flaskProject\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "G:\flaskProject\apps\../templates\product.html", line 1, in top-level template code
+    {% extends "layout.html" %}
+  File "G:\flaskProject\apps\../templates\layout.html", line 109, in top-level template code
+    {% block content %}{% endblock %}
+  File "G:\flaskProject\apps\../templates\product.html", line 67, in block "content"
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+jinja2.exceptions.UndefinedError: 'csrf_token' is undefined
+2021-12-20 11:19:15 INFO routes.py category[line:98] category items
+2021-12-20 11:20:42 INFO routes.py home[line:16] Enter the home page
+2021-12-20 11:20:42 INFO routes.py home[line:16] Enter the home page
+2021-12-20 11:20:48 INFO routes.py category[line:98] category items
+2021-12-20 11:20:50 INFO routes.py product[line:115] Successfully query test
+2021-12-20 11:20:50 INFO routes.py product[line:120] Successfully query
+2021-12-20 11:21:00 INFO routes.py product[line:115] Successfully query test
+2021-12-20 11:21:00 INFO routes.py product[line:120] Successfully query
+2021-12-20 11:21:00 INFO routes.py product[line:125] 123 add products
+2021-12-20 11:21:00 INFO routes.py product[line:135] Successfully added items to cart table
+2021-12-20 11:21:00 INFO routes.py product[line:142] 123 add product to shopping cart successfully
+2021-12-20 11:37:44 INFO routes.py category[line:98] category items
+2021-12-20 11:37:47 INFO routes.py product[line:115] Successfully query Nike Therma-FIT ADV ACG“Lunar Lake”
+2021-12-20 11:37:47 INFO routes.py product[line:120] Successfully query
+2021-12-20 11:40:04 INFO routes.py home[line:16] Enter the home page
+2021-12-20 11:40:09 INFO routes.py category[line:98] category items
+2021-12-20 11:40:11 INFO routes.py product[line:115] Successfully query Nike ZoomX Vaporfly Next% 2
+2021-12-20 11:40:11 INFO routes.py product[line:120] Successfully query
+2021-12-20 13:23:58 INFO routes.py seller_delete[line:395] seller delete the product
+2021-12-20 13:23:58 INFO routes.py logout[line:344] logout
+2021-12-20 13:23:58 INFO routes.py home[line:16] Enter the home page
+2021-12-20 13:23:58 INFO routes.py logout[line:344] logout
+2021-12-20 13:23:58 INFO routes.py home[line:16] Enter the home page
+2021-12-20 13:23:58 INFO routes.py product[line:115] Successfully query test
+2021-12-20 13:23:58 INFO routes.py product[line:120] Successfully query
+2021-12-20 13:23:58 INFO routes.py product[line:115] Successfully query test
+2021-12-20 13:23:58 INFO routes.py product[line:120] Successfully query
+2021-12-20 13:23:59 INFO routes.py logout[line:344] logout
+2021-12-20 13:23:59 INFO routes.py home[line:16] Enter the home page
+2021-12-20 13:24:55 INFO routes.py seller_delete[line:395] seller delete the product
+2021-12-20 13:24:55 INFO routes.py logout[line:344] logout
+2021-12-20 13:24:55 INFO routes.py home[line:16] Enter the home page
+2021-12-20 13:24:56 INFO routes.py logout[line:344] logout
+2021-12-20 13:24:56 INFO routes.py home[line:16] Enter the home page
+2021-12-20 13:24:56 INFO routes.py product[line:115] Successfully query test
+2021-12-20 13:24:56 INFO routes.py product[line:120] Successfully query
+2021-12-20 13:24:56 INFO routes.py product[line:115] Successfully query test
+2021-12-20 13:24:56 INFO routes.py product[line:120] Successfully query
+2021-12-20 13:24:56 INFO routes.py logout[line:344] logout
+2021-12-20 13:24:56 INFO routes.py home[line:16] Enter the home page
+2021-12-20 13:27:42 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:28:12 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:29:05 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:29:05 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:29:56 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:29:56 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:30:05 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:30:05 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:31:17 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:31:17 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:31:46 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:31:46 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:32:52 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:32:52 INFO routes.py register[line:25] User try to sign up
+2021-12-20 13:43:40 INFO routes.py login[line:67] 123 login
+2021-12-20 13:43:40 INFO routes.py home[line:16] Enter the home page
+2021-12-20 13:43:56 INFO routes.py user[line:361] Successful modification of database information
+2021-12-20 14:55:20 INFO routes.py register[line:25] User try to sign up
+2021-12-20 14:55:20 INFO routes.py register[line:25] User try to sign up
+2021-12-20 14:55:26 INFO routes.py seller_delete[line:395] seller delete the product
+2021-12-20 14:55:26 INFO routes.py logout[line:344] logout
+2021-12-20 14:55:26 INFO routes.py home[line:16] Enter the home page
+2021-12-20 14:55:26 INFO routes.py register[line:25] User try to sign up
+2021-12-20 14:55:27 INFO routes.py register[line:25] User try to sign up
+2021-12-20 14:55:27 INFO routes.py logout[line:344] logout
+2021-12-20 14:55:27 INFO routes.py home[line:16] Enter the home page
+2021-12-20 14:55:27 INFO routes.py register[line:25] User try to sign up
+2021-12-20 14:55:27 INFO routes.py register[line:25] User try to sign up
+2021-12-20 14:55:27 INFO routes.py product[line:115] Successfully query test
+2021-12-20 14:55:27 INFO routes.py product[line:120] Successfully query
+2021-12-20 14:55:27 INFO routes.py product[line:115] Successfully query test
+2021-12-20 14:55:27 INFO routes.py product[line:120] Successfully query
+2021-12-20 14:55:27 INFO routes.py logout[line:344] logout
+2021-12-20 14:55:27 INFO routes.py home[line:16] Enter the home page
+2021-12-20 14:55:27 INFO routes.py register[line:25] User try to sign up
+2021-12-20 14:55:27 INFO routes.py register[line:25] User try to sign up

@@ -33,6 +33,7 @@
                             <div class="card-body ">
                                 <form action="" class="checkout-form" method="post" name="edit" enctype="multipart/form-data">
                                     {{ form.hidden_tag() }}
+                                {{ form.csrf_token }}
                                     <div class="row">
                                         <div class="col-lg-2">
                                             <p>Title:</p>
@@ -46,7 +47,6 @@
                                                 {% endfor %}
                                             </div>
                                             {% else %}
-                                {#            <input type="datetime-local" name="datetime"class="">#}
                                                 {{ form.title(cols='20',class_="form-control form-control-lg") }}<br>
                                             {% endif %}
                                         </div>
@@ -64,7 +64,6 @@
                                                 {% endfor %}
                                             </div>
                                             {% else %}
-                                {#            <input type="datetime-local" name="datetime"class="">#}
                                                 {{ form.price(cols='20',class_="form-control form-control-lg") }}<br>
                                             {% endif %}
                                         </div>
@@ -82,7 +81,6 @@
                                                 {% endfor %}
                                             </div>
                                             {% else %}
-                                {#            <input type="datetime-local" name="datetime"class="">#}
                                                 {{ form.description(cols='120',class_="form-control form-control-lg") }}<br>
                                             {% endif %}
                                         </div>
@@ -123,7 +121,6 @@
                                     <div class="col-lg-3">
                                     {{ form.submit(class="btn btn-default") }}
                                     </div>
-{#                                <p><input type="submit" class="btn btn-default" value="Save"></p>#}
                                 </form>
                             </div>
 

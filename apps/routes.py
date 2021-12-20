@@ -1,8 +1,9 @@
 import random
+from email.message import Message
 
 from flask import redirect, flash, render_template, url_for, request, session, jsonify
-from apps.forms import RegistrationForm, LoginForm, InforForm, UserForm, SellerForm, ProductForm
-from apps import bcrypt, app, photos
+from apps.forms import RegistrationForm, LoginForm, InforForm, UserForm, SellerForm, ProductForm, RequestResetForm
+from apps import bcrypt, photos, mail
 from apps.models import *
 from flask_login import current_user, login_user, login_required, logout_user
 
@@ -16,7 +17,6 @@ def home():
     # Set the session expiry time
     session.permanent = True
     return render_template('home.html')
-
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -36,8 +36,6 @@ def register():
             user_type = 2
         elif type_user == "Consumer":
             user_type = 3
-        # type_gender = request.form.get("gender")
-        # print(type_gender)
         users = User()
         users.username = usernames
         users.email = emails
@@ -73,28 +71,17 @@ def login():
             flash(f'Please check the information!', 'danger')
         return render_template('login.html', form=form, title='Login')
     return render_template('login.html', form=form, title='Login')
-    # else:
-    #     if 'email' in session:
-    #         return redirect(url_for('home'))
-    #     else:
-    #         if 'email' in request.cookies:
-    #             email = request.cookies.get('email')
-    #             session[email] = email
-    #             return redirect(url_for('home'))
 
 
 @app.route('/sort/<string:category_name>', methods=['POST', 'GET'])
 def soft_products(category_name):
     page = request.args.get('page', 1, type=int)
-    print(request.form.get("sort"))
     if 'sort' in session and request.form.get("sort") == None:
         sort = session['sort']
     else:
         sort = int(request.form.get("sort"))
         session['sort'] = sort
-    print(sort)
     sorts = {0: Product.title, 1: Product.title, 2: Product.price}
-    print(sorts)
     categories = Category.query.all()
     if category_name != 'All':
         category = Category.query.filter_by(name=category_name).first_or_404()
@@ -165,7 +152,6 @@ def product(product_id):
     # for i in category_item:
     #     category_itemsid.append(i.id)
     random_itemid = random.sample(category_item, 4)
-    print(random_itemid)
     if 'content_error' in session:
         app.logger.warning("content error ")
         content_error = session['content_error']
@@ -303,8 +289,6 @@ def order():
     if current_user.is_authenticated:
         order_items = CartItem.query.filter_by(user_id=current_user.id).all()
         for i in order_items:
-            # print(i.product_id.name)
-            print('*******************')
             product = Product.query.filter_by(id=i.product_id).first()
             infor = Infor.query.filter_by(id=i.infor_id).first()
             history_order[product.title] = []
@@ -319,7 +303,6 @@ def order():
             history_order[product.title].append(infor.country)
             history_order[product.title].append(i.status)
             history_order[product.title].append(i.id)
-        print(history_order)
         return render_template('orders.html', history_order=history_order)
     else:
         flash('Please log in to access this page.')
@@ -353,24 +336,6 @@ def update_cart(product_id):
     cart_item.quantity = quantity
     db.session.commit()
     return redirect(url_for('cart'))
-
-
-# @app.route('/search', methods=['POST', 'GET'])
-# def search():
-#     index_name = 'fashionshop'
-#     doc_type = 'product'
-#     query = request.form.get('query')
-#     print(query)
-#     query = es.search(index=index_name, body={'query': {'match': {'title': query}}})
-#     found = query['hits']['total']['value']
-#     products = []
-#     print(query['hits']['hits'])
-#     for item in query['hits']['hits']:
-#         product = Product.query.filter_by(title=item['_source']['title']).first()
-#         print(product)
-#         products.append(product)
-#     print(products)
-#     return render_template('search.html', products=products, found=found)
 
 
 @app.route('/logout')
@@ -421,9 +386,6 @@ def seller_home():
 
 @app.route('/seller_delete/<int:id>', methods=['GET', 'POST'])
 def seller_delete(id):
-    # req_dict=request.get_json()
-    # product_id = req_dict.get("product_id")
-    # print(product_id)
     product = Product.query.get(id)
     cartitems = CartItem.query.filter_by(product_id=id).all()
     for cartitem in cartitems:
@@ -437,20 +399,17 @@ def seller_delete(id):
 @app.route('/seller_edit/<int:id>', methods=['GET', 'POST'])
 def seller_edit(id):
     product = Product.query.get(id)
-    print(product)
     if not product:
         return render_template(url_for('seller_home'))
     form = SellerForm(obj=product)
     if form.validate_on_submit():
         product.title = form.title.data
         product.price = form.price.data
-        print(form.price.data)
         product.description = form.description.data
         # product.image_file = form.image_file.data
         # product.image_file = photos.save(form.photo.data)
         product.image_file = photos.save(form.photo.data)
         # file_url = photos.url(product.image_file)
-        print(product.image_file)
         # file_url = photos.url(filename)
         app.logger.info("seller edit the product")
         app.logger.info("Successful modification of database information")
@@ -523,7 +482,6 @@ def seller_order():
             product_items[product.title].append(i.id)
             # product_items[product.title].append(infor.cartitems.id)
             product_items[product.title].append(i.status)
-        print(product_items)
         return render_template('seller_order.html', product_items=product_items)
     else:
         flash('Please log in to access this page.')
@@ -533,7 +491,6 @@ def seller_order():
 @app.route('/agree/<int:id>', methods=['GET', 'POST'])
 def agree(id):
     cart_item = CartItem.query.get(id)
-    print(cart_item)
     cart_item.status = 3
     app.logger.info("Agree to user return")
 
@@ -548,3 +505,43 @@ def reject(id):
     db.session.commit()
     app.logger.info("Refusal to return a product to a user")
     return redirect('/seller_order')
+
+
+def send_rest_email(user):
+    token = user.get_reset_token()
+    msg = Message('reset', sender='test@demo.com', recipients=[user.email])
+    msg.body = f'''To reset your password please visit one of the following links:
+{url_for('reset_token', token=token, _extend=True)}
+    If you have not sent this request, please ignore'''
+    mail.send(msg)
+
+
+@app.route("/reset_password", methods=['GET', 'POST'])
+def reset_request():
+    if current_user.is_authenticated:
+        return redirect('/home')
+    form = RequestResetForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        send_rest_email(user)
+        flash('send an email')
+        return redirect('/login')
+    return render_template('reset_request.html', title='reset the password', form=form)
+
+
+@app.route("/reset_password/<token>", methods=['GET', 'POST'])
+def reset_token(token):
+    if current_user.is_authenticated:
+        return redirect('/home')
+    user = User.verify_reset_token(token)
+    if user is None:
+        flash('Token has expired')
+        return redirect(url_for('reset_request'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user.password = hashed_password
+        db.session.commit()
+        flash('Password has been changed')
+        return redirect(url_for('login'))
+    return render_template('reset_token.html', title='reset', form=form)

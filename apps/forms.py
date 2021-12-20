@@ -75,9 +75,26 @@ class ProductForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     price = StringField('Price', validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
-    photo = FileField(u'图片上传', validators=[
-        FileAllowed(['jpg', 'png'], '只接收.jpg和.png格式的图片')
+    photo = FileField(u'upload img', validators=[
+        FileAllowed(['jpg', 'png'], 'Only .jpg and .png format images are accepted')
     ])
     submit = SubmitField('Upload')
+
+
+class RequestResetForm(FlaskForm):
+    email = StringField('email', validators=[DataRequired(), Email()])
+    submit = SubmitField('reset')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is None:
+            raise ValidationError('the email is not exist!')
+
+
+# class ResetPasswordForm(FlaskForm):
+#     password = PasswordField('Password', validators=[DataRequired(), Length(min=2, max=20)])
+#     confirm_password = PasswordField('Confirm Password', validators=[DataRequired, EqualTo('password')])
+#     submit = SubmitField('submit')
+
 
 

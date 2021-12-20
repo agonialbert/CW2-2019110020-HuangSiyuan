@@ -5,7 +5,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from datetime import timedelta
-
+from flask_mail import Mail
+from flask_wtf import CSRFProtect
 
 from werkzeug.datastructures import ImmutableDict
 from flask_script import Manager
@@ -56,11 +57,18 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['ENV'] = 'development'
 app.config['UPLOADED_PHOTOS_DEST'] = os.getcwd()
 
+# mail
+app.config['MAIL_SERVER'] = 'smtp.qq.com'
+app.config['MAIL_PORT'] = 25
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_ADDRESS')
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASSWORD')
+mail = Mail(app)
 photos = UploadSet('photos', IMAGES)
 configure_uploads(app, photos)
 patch_request_class(app)
 
-# csrf = CSRFProtect(app)
+csrf = CSRFProtect(app)
 jinja_options = ImmutableDict(
     extensions=[
         'jinja2.ext.autoescape', 'jinja2.ext.with_'  # Turn auto escaping on
